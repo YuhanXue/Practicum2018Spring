@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+</head>
+<body>
+<form action="/users/search" method="post">
+    姓名：<input type="text" name="s_name" value="{{s_name}}"><br>
+    年龄：<input type="text" name="s_age" value="{{s_age}}"><br>
+    <input type="submit" value="查询">
+</form>
+
+<table>
+    <tr>
+        <th>编号</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>地址</th>
+        <th>手机</th>
+        <th>电子邮箱</th>
+        <th>操作</th>
+    </tr>
+    {{each datas as users index}}
+    <tr>
+        <td>{{users.Id}}</td>
+        <td>{{users.Name}}</td>
+        <td>{{users.Age}}</td>
+        <td>{{users.Address}}</td>
+        <td>{{users.Phone}}</td>
+        <td>{{users.Mail}}</td>
+        <td><a href="/users/add">新增</a></td>
+        <td><a href="/users/del/{{users.Id}}">删除</a></td>
+        <td><a href="/users/toUpdate/{{users.Id}}">修改</a></td>
+    </tr>
+    {{/each}}
+</table>
+</body>
+</html>
