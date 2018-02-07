@@ -1,6 +1,6 @@
 # Practicum2018Spring
-This is update come from Li cheng, we have finish the register and login function ,in next we will need to finish use email verify the account according to our customer requirement and also we will continue to make our website became more beautiful use BootStrap.
+This is update come from Li cheng, I fix picture cannot show in the jps bug and also I will do more job in making our GUI become more beautiful in next few days
 
-Li Cheng ,YuHan Xue 
-2/6/2018  
+Li Cheng 
+2/7/2018  
 
