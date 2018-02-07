@@ -3,6 +3,7 @@ package edu.monmouth.practicum.Controller;
 import edu.monmouth.practicum.Dao.UserDao;
 import edu.monmouth.practicum.Domain.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
