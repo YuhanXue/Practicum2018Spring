@@ -1,5 +1,6 @@
 package edu.monmouth.practicum.Controller;
 
+import Utils.javaMail;
 import edu.monmouth.practicum.Dao.UserDao;
 import edu.monmouth.practicum.Domain.User;
 import org.springframework.stereotype.Controller;
@@ -16,7 +17,7 @@ public class UserController {
     @Resource
     UserDao userDao;
     @RequestMapping("register.do")
-    public String Register(User user,HttpSession session){
+    public String Register(User user,HttpSession session) throws Exception {
         String email = user.getEmail();
         String RULE_EMAIL = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$";
         Pattern p = Pattern.compile(RULE_EMAIL);
@@ -24,7 +25,10 @@ public class UserController {
         if(m.matches()){
         user.setVerified(0);
         userDao.save(user);
-            return "login";
+        session.setAttribute("user",user);
+        javaMail javaMail = new javaMail();
+        javaMail.sendmail(user.getEmail());
+        return "login";
         }
         else{
             session.setAttribute("email_msg","error email try it again");
@@ -39,9 +43,14 @@ public class UserController {
             session.setAttribute("user_msg","error username or password");
             return "login";
         }else {
-            user.setVerified(1);
-            userDao.save(user);
+            if(user.getVerified() == 0){
+                session.setAttribute("user_msg","you need verify your email address");
+                return "login";
+            }else{
+//            user.setVerified(1);
+//            userDao.save(user);
             return "index";
+            }
         }
 
     }
