@@ -9,6 +9,7 @@
 
 <body>
     <form action="${pageContext.request.contextPath}/register.do">
+        <font color="#ff0000">${email_msg}</font><br />
         Username:<input type="text" name="username"><br/>
         Password:<input type="text" name="password"><br/>
         ID_Number:<input type="text" name="id_number"/><br/>

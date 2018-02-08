@@ -6,7 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
@@ -15,10 +16,21 @@ public class UserController {
     @Resource
     UserDao userDao;
     @RequestMapping("register.do")
-    public String Register(User user){
+    public String Register(User user,HttpSession session){
+        String email = user.getEmail();
+        String RULE_EMAIL = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$";
+        Pattern p = Pattern.compile(RULE_EMAIL);
+        Matcher m = p.matcher(email);
+        if(m.matches()){
         user.setVerified(0);
         userDao.save(user);
-        return "login";
+            return "login";
+        }
+        else{
+            session.setAttribute("email_msg","error email try it again");
+            return "register";
+        }
+
     }
     @RequestMapping("login.do")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session){
