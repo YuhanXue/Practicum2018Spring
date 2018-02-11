@@ -12,6 +12,6 @@
 </head>
 <body background="${pageContext.request.contextPath}/images/banner.jpg">
 this index page you have login successfully<br/>
-<img src="images/banner.jpg"/>
+
 </body>
 </html>

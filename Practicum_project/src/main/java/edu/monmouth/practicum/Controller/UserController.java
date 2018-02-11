@@ -14,6 +14,9 @@ import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserController {
+    /**
+
+     */
     @Resource
     UserDao userDao;
     @RequestMapping("register.do")
