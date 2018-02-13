@@ -10,7 +10,8 @@
 <head>
     <title>index</title>
 </head>
-<body background="${pageContext.request.contextPath}/images/banner.jpg">
+<body>
+
 this index page you have login successfully<br/>
 
 </body>
