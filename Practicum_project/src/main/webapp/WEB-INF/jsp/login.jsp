@@ -13,20 +13,29 @@
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <%--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>--%>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .form-horizontal{
+            padding: 150px 200px;
+        }
+    </style>
 </head>
 
 <body>
+
+<div class="container">
+    <div class="row">
 <form class="form-horizontal" action="${pageContext.request.contextPath}/login.do">
+    <h1 class="page-header"><span class="glyphicon glyphicon-user"></span> User Login</h1>
     <font color="#ff0000">${user_msg}</font><br />
     <div class="form-group">
         <label for="Username" class="col-sm-2 control-label">Username</label>
-        <div class="col-sm-10">
-            <input type="text" class="form-control" id="Username" placeholder="Username" name="username">
+        <div class="col-sm-6">
+            <input type="text" class="form-control"  id="Username" placeholder="Username" name="username">
         </div>
     </div>
     <div class="form-group">
         <label for="password" class="col-sm-2 control-label">Password</label>
-        <div class="col-sm-10">
+        <div class="col-sm-6">
             <input type="password" class="form-control" id="password" placeholder="Password" name="password">
         </div>
     </div>
@@ -36,5 +45,7 @@
         </div>
     </div>
 </form>
+</div>
+</div>
 </body>
 </html>
