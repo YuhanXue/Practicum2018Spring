@@ -13,6 +13,13 @@
             padding: 120px 100px;
         }
     </style>
+    <script type="text/javascript">
+        function changeImage() {
+
+            document.getElementById("img").src = "${pageContext.request.contextPath}/imagecode?time="
+                + new Date().getTime();
+        }
+    </script>
 </head>
 
 <body>
@@ -62,7 +69,7 @@
         <div class="form-group">
             <label for="email"  class="col-sm-2 control-label">Email</label>
             <div class="col-sm-7">
-            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
+            <input type="email" class="form-control" id="email"  placeholder="Email"  name="email">
             </div>
         </div>
         <div class="form-group">
@@ -73,6 +80,14 @@
                 <option value="Master">Master</option>
                 <option value="Phd">Phd</option>
             </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="checkCode"  class="col-sm-2 control-label">VerifyCode</label>
+            <div class="col-sm-2">
+                <input type="text" class="form-control" id="checkCode" name="checkCode"/>
+                <img src="${pageContext.request.contextPath}/imagecode" class="form-control" id="img" />&nbsp;&nbsp;
+                <a href="javascript:void(0);" onclick="changeImage()">Can not see clearly</a>
             </div>
         </div>
         <div class="form-group">
