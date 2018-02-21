@@ -82,6 +82,7 @@
             </select>
             </div>
         </div>
+        <font color="#ff0000">${errorMsg}</font><br />
         <div class="form-group">
             <label for="checkCode"  class="col-sm-2 control-label">VerifyCode</label>
             <div class="col-sm-2">

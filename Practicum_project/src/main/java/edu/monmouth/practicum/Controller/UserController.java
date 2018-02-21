@@ -5,6 +5,7 @@ import Utils.javaMail;
 import edu.monmouth.practicum.Dao.UserDao;
 import edu.monmouth.practicum.Domain.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,18 +36,39 @@ public class UserController {
         String RULE_EMAIL = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$";
         Pattern p = Pattern.compile(RULE_EMAIL);
         Matcher m = p.matcher(email);
-        if(m.matches()){
-        user.setVerified(0);
-        userDao.save(user);
-        session.setAttribute("user",user);
-        javaMail javaMail = new javaMail();
-        javaMail.sendmail(user.getEmail());
-        return "login";
+        String checkCode = request.getParameter("checkCode");
+        Object cko = session.getAttribute("simpleCaptcha") ;
+        if(cko == null){
+            request.setAttribute("errorMsg", "Too long time of this verified code, please rewrite verified code again！");
         }
-        else{
-            session.setAttribute("email_msg","error email try it again");
+        String captcha = cko.toString();
+        Date now = new Date();
+        Long codeTime = Long.valueOf(session.getAttribute("codeTime")+"");
+        if(StringUtils.isEmpty(checkCode) || captcha == null ||  !(checkCode.equalsIgnoreCase(captcha))) {
+            request.setAttribute("errorMsg", "Verification code error!");
             return "register";
+
+        } else if ((now.getTime()-codeTime)/1000/60>5) {
+            //验证码有效时长为5分钟
+            request.setAttribute("errorMsg", "Verification code is invalid, please re-enter!");
+            return "register";
+        }else {
+
+            if(m.matches()){
+                user.setVerified(0);
+                userDao.save(user);
+                session.setAttribute("user",user);
+                javaMail javaMail = new javaMail();
+                javaMail.sendmail(user.getEmail());
+                session.removeAttribute("simpleCaptcha");
+                return "login";
+            }
+            else{
+                session.setAttribute("email_msg","error email try it again");
+                return "register";
+            }
         }
+
 
     }
     @RequestMapping("login.do")
