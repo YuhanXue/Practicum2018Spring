@@ -2,13 +2,13 @@
 
 					<nav class="site-nav">
 						<?php
-						//定义数组
+						
 						$args=array(
-							//menu的name和location
+							
 							'theme_location' => 'footer'
 						);
 						?>
-						<?php wp_nav_menu($args);?> <!--WordPress自己的方法-->
+						<?php wp_nav_menu($args);?>
 					</nav>
 
 					<p><?php bloginfo('name'); ?> - &copy; <?php echo date('Y') ; ?></p>
@@ -17,6 +17,5 @@
 
 			</div><!--for container-->
 
-		<?php wp_footer();?> <!--和之前同理-->
-	</body>
+		<?php wp_footer();?>
 </html>
