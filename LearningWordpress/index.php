@@ -1,9 +1,9 @@
 <!--This is the page that controls our homepage, the output-->
     <?php
         get_header();
-        //Loop through what's in the "Post" in WordPress
-        if(have_posts()) :  //if we have a post
-            //do this
+       
+        if(have_posts()) : 
+           
             while(have_posts()) : the_post();
     ?>
     <article class="post">
