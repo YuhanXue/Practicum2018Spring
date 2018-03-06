@@ -30,17 +30,17 @@
     </div>
 </div>
 <div class="w search">
-    <form>
+    <form action="${pageContext.request.contextPath }/joblist">
         <div class="job">
             <label class="icl-TextInput-label--whatWhere">what</label>
             <div class="icl-TextInput-helpText--whatWhere">job title, keywords, or company</div><br/>
-            <input class="job_input" type="text"/>
+            <input class="job_input" type="text" name="jobname"/>
 
         </div>
         <div class="location">
             <label class="icl-TextInput-label--whatWhere">where</label>
             <div class="icl-TextInput-helpText--whatWhere">city, state, or zip code</div><br/>
-            <input class="location_input" type="text"/>
+            <input class="location_input" type="text" name="location"/>
         </div>
         <button value="submit">submit</button>
     </form>
