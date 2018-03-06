@@ -112,3 +112,74 @@ s, i, em {
     float: right;
 
 }
+.againw {
+    border-top: 1px solid #E5E5E5;
+    padding: 23px 0 30px 0;
+    margin-top: 50px;
+    text-align: center;
+}
+.copyright {
+
+    line-height: 18px;
+    margin-bottom: 10px;
+}
+.search{
+    margin-top: 50px;
+    height: 400px;
+    padding-top: 50px;
+    border:1px solid #E5E5E5;
+
+}
+.job{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 200px;
+    float: left;
+}
+.search .icl-TextInput-label--whatWhere {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-weight: 600;
+    color: #000;
+    font-size: 20px;
+}
+
+.search .icl-TextInput-helpText--whatWhere {
+    color: #767676;
+    font-family: Helvetica Neue,Helvetica,Arial,Liberation Sans,Roboto,Noto,sans-serif;
+    font-size: .75rem;
+    letter-spacing: 0;
+    line-height: 1rem;
+    font-weight: 400;
+    display: inline;
+}
+.search .job_input{
+    border: 1px solid #767676;
+    height: 40px;
+    width: 400px;
+    border-radius:10px 0px 0px 10px;
+    margin-left: 15px;
+    padding-left: 5px;
+}
+.search .location{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    float: left;
+}
+.search .location_input{
+    border: 1px solid #767676;
+    height: 40px;
+    width: 400px;
+    border-radius:10px 0px 0px 10px;
+    margin-left: 15px;
+    padding-left: 10px;
+}
+.search button{
+    border: 1px solid darkgreen;
+    margin-top: 45px;
+    width: 60px;
+    height: 40px;
+    margin-left: 40px;
+    float: left;
+    background-color: deepskyblue;
+}
