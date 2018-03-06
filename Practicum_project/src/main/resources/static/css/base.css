@@ -183,3 +183,31 @@ s, i, em {
     float: left;
     background-color: deepskyblue;
 }
+.tableopen {
+    text-align: center;
+}
+.tableopentd01 {
+    text-align: center;
+    border: 1px solid #FFFFFF;
+    padding: 3px;
+    color: #FFFFFF;
+}
+.tableopentd02 {
+    text-align: center;
+    padding: 3px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-top-style: none;
+    border-right-style: solid;
+    border-bottom-style: solid;
+    border-left-style: solid;
+    border-top-color: #C5E0E2;
+    border-right-color: #C5E0E2;
+    border-bottom-color: #C5E0E2;
+    border-left-color: #C5E0E2;
+}
+.job_content{
+
+}

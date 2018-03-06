@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>Home</title>
@@ -43,6 +44,31 @@
         </div>
         <button value="submit">submit</button>
     </form>
+
+</div>
+<div class=" w job_content">
+    <table width="100%" border="0" cellspacing="0" class="tableopen">
+        <tr>
+            <td bgcolor="#A3E6DF" class="tableopentd01">user number</td>
+            <td bgcolor="#A3D7E6" class="tableopentd01">Username</td>
+            <td bgcolor="#A3B6E6" class="tableopentd01">degree</td>
+            <td bgcolor="#A3E2E6" class="tableopentd01">email</td>
+        </tr>
+
+
+        <c:forEach items="${users}" var="user" varStatus="vs">
+
+            <tr>
+                <td class="tableopentd02">${vs.count}</td>
+
+                <%--<td class="tableopentd02">${user.id}</td>--%>
+                <td class="tableopentd02">${user.username}</td>
+                    <%--<td class="tableopentd02">${user.paystate==0?no_pay:have_pay}</td>--%>
+                <td class="tableopentd02">${user.degree}</td>
+                <td class="tableopentd02">${user.email}</td>
+            </tr>
+        </c:forEach>
+    </table>
 </div>
 <div class="w againw">
     <div class="copyright">
