@@ -1,6 +1,8 @@
 package edu.monmouth.practicum;
 
+import edu.monmouth.practicum.Dao.JobDao;
 import edu.monmouth.practicum.Dao.UserDao;
+import edu.monmouth.practicum.Domain.Job;
 import edu.monmouth.practicum.Domain.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,14 +20,19 @@ import java.util.List;
 public class PracticumApplication {
 	@Resource
 	UserDao userDao;
+	@Resource
+	JobDao jobDao;
 	public static void main(String[] args) {
 		SpringApplication.run(PracticumApplication.class, args);
 	}
 	@RequestMapping("/")
 	public String register(HttpSession session){
-		List<User> users = new ArrayList<User>();
-		users = userDao.findAll();
-		session.setAttribute("users",users);
+//		List<User> users = new ArrayList<User>();
+//		users = userDao.findAll();
+//		session.setAttribute("users",users);
+		List<Job> jobs = new ArrayList<Job>();
+		jobs = jobDao.findByRequirementLike("%"+"java"+"%");
+		session.setAttribute("jobs",jobs);
 		return "Home";
 	}
 	@RequestMapping("/verify")

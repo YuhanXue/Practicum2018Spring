@@ -208,6 +208,9 @@ s, i, em {
     border-bottom-color: #C5E0E2;
     border-left-color: #C5E0E2;
 }
-.job_content{
-
+.Recommend_job{
+    font-size: 30px;
+    color: #1d1e1f;
+    text-align: center;
+    margin-bottom: 10px;
 }
