@@ -16,13 +16,28 @@
 <div class="shortcut">
     <div class="w">
         <div class="scleft">
-            <ul>
+            <ul class="main">
                 <li><a href="#" class="findjob">Find job</a></li>
                 <li><a>Company Review</a></li>
                 <li><a>Find Salaries</a></li>
                 <li><a>Find Resume</a></li>
                 <li><a>Post job</a></li>
-                <li class="messages"><a>Messages</a></li>
+                <li class="messages" id="messages"><a>Messages</a>
+
+                    <ul class="box" id="box">
+                        <li><a href="">标准</a></li>
+                        <li><a href="">教程</a></li>
+                        <li><a href="">技术文章</a></li>
+                        <li><a href="">常见问题</a></li>
+                        <li><a href="">布局教程专题</a></li>
+                        <li><a href="">CSS菜单</a></li>
+                        <li><a href="">浏览器兼容</a></li>
+                        <li><a href="">滚动条相关</a></li>
+                        <li><a href="">圆角矩形专题</a></li>
+                        <li><a href="">CSS特效欣赏专题</a></li>
+                    </ul>
+
+                </li>
             </ul>
 
         </div>
@@ -80,5 +95,14 @@
         违法和不良信息举报电话：4006561155  Copyright © 2004-2018  xxxx.com 版权所有<br />
     </div>
 </div>
+<script language="JavaScript">
+    document.getElementById("messages").onmouseout=function(){//当鼠标滑出
+        document.getElementById("box").style.visibility="hidden";
+    };
+    document.getElementById("messages").onmouseover=function(){ //当鼠标经过
+        document.getElementById("box").style.visibility="visible";
+    };
+
+</script>
 </body>
 </html>

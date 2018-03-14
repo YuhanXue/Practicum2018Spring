@@ -20,7 +20,7 @@ public class JobService {
     public List<Job> Find_Job(String jobname,String location){
         String sql = "select j.id,j.jobname,j.location,j.requirement,j.contact from Job j where 1=1";
         if(!"".equals(jobname.trim())&&!(jobname==null)){
-            sql+=" and jobname like '"+jobname+"'";
+            sql+=" and requirement like '"+jobname+"'";
         }
         if(!"".equals(location.trim())&&!(location==null)){
             sql+=" and location like '"+location+"'";
