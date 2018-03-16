@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    backgroud-size:cover;
+    background-size: cover;
     background: url(../WebProject1/includes/BG1.jpg);
     /*background-repeat: no-repeat;*/
     font-family:sans-serif;
@@ -12,8 +12,8 @@ body{
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    width:350px;
-    height: 650px;
+    width:400px;
+    height: 700px;
     box-sizing:border-box;
     background: rgba(0,0,0,.5);
 }
@@ -51,18 +51,104 @@ h1{
     outline:none;
     height:40px;
     font-size: 16px;
-    background: azure;
+    background: steelblue;
+    color: whitesmoke;
     cursor:pointer;
     border-radius:20px;
 }
 .SignUpBox input[type="submit"]:hover{
-    background: aqua ;
-    color: cornflowerblue;
+    background: whitesmoke ;
+    color: steelblue;
 }
-.SignUpBox a
+/*Select box*/
+select{
+    font-size: 100%;
+    background: transparent;
+    border: .5px solid #fff;
+    padding: .5rem 7rem .3rem 5rem;
+    border-radius:8px;
+    color: darkgray;
+}
+/*.box6 .input{
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding:8px 6px;
+    color:#999;
+    font-weight: 300;
+    font-size: 13px;
+    position: relative;
+}
+.select
 {
-    color: lightblue;
-    font-size: 14px;
-    font-weight: bold;
-    text-decoration: none;
+    cursor: pointer;
+    position: relative;
+    margin: 50px auto;
+    width: 250px;
 }
+.select .input:after, .select .input:before
+{
+    content: '';
+    position: absolute;
+    left:calc(100% - 20px);
+    transform:translateY(-50%);
+    width:0;
+    height:0;
+}
+.select .input:before
+{
+    border-top: 5px solid #999;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    top: 50%;
+}
+.select .input:after
+{
+    border-top: 5px solid #fff;
+    border-left:5px solid transparent;
+    border-right: 5px solid transparent;
+    top: calc(50% - 1px);
+}
+.select-options
+{
+    border: 1px solid steelblue;
+    position:absolute;
+    width: 100%;
+    border-radius: 3px;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    padding-top: 30px;
+    display: none;
+}
+.select-options ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.select-options ul li{
+    padding: 8px 50px 8px 6px;
+    border-bottom: 1px solid #ddd;
+    font-size: 13px;
+    color: #999999;
+    font-weight: 300;
+    position: relative;
+    overflow: hidden;
+}
+.select-options ul li:last-child{
+    border-bottom: 0;
+}
+.select-options ul li.selected > span:first-child{
+    color:cornflowerblue;
+}
+.select-options ul li.selected:after{
+    content: '';
+    width: 5px;
+    height: 10px;
+    border: 1px solid cornflowerblue;
+    border-right: 0;
+    border-bottom: 0;
+    left: calc(100% - 20px);
+    top:50%;
+    transform: translateY(-50%) rotate(-135deg);
+    position: absolute;
+}*/
