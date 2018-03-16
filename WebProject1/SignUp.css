@@ -1,0 +1,68 @@
+body{
+    margin:0;
+    padding:0;
+    backgroud-size:cover;
+    background: url(../WebProject1/includes/BG1.jpg);
+    /*background-repeat: no-repeat;*/
+    font-family:sans-serif;
+}
+.SignUpBox{
+    padding: 80px 40px;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width:350px;
+    height: 650px;
+    box-sizing:border-box;
+    background: rgba(0,0,0,.5);
+}
+h1{
+    margin:0;
+    padding:0 0 20px;
+    color: azure;
+    text-align: center;
+}
+.SignUpBox p{
+    margin:0;
+    padding: 0;
+    font-weight: bold;
+    color:#fff;
+}
+.SignUpBox input{
+    width:100%;
+    margin-bottom: 20px;
+}
+.SignUpBox input[type="text"],.SignUpBox input[type="password"],
+.SignUpBox input[type="email"]{
+    border: none;
+    border-bottom: 1px solid #ffffff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #ffffff;
+    font-size: 16px;
+}
+::placeholder{
+    color:rgba(255,255,255,.5);
+}
+.SignUpBox input[type="submit"]{
+    border:none;
+    outline:none;
+    height:40px;
+    font-size: 16px;
+    background: azure;
+    cursor:pointer;
+    border-radius:20px;
+}
+.SignUpBox input[type="submit"]:hover{
+    background: aqua ;
+    color: cornflowerblue;
+}
+.SignUpBox a
+{
+    color: lightblue;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+}
