@@ -59,13 +59,14 @@ h1{
     outline:none;
     height:40px;
     font-size: 16px;
-    background: azure;
+    background: steelblue;
+    color: whitesmoke;
     cursor:pointer;
     border-radius:20px;
 }
 .loginBox input[type="submit"]:hover{
-    background: aqua ;
-    color: cornflowerblue;
+     background: whitesmoke ;
+     color: steelblue;
 }
 .loginBox a
 {
