@@ -13,19 +13,20 @@ body{
     left: 50%;
     transform: translate(-50%,-50%);
     width:400px;
-    height: 700px;
+    height: 750px;
     box-sizing:border-box;
     background: rgba(0,0,0,.5);
 }
 h1{
-    margin:0;
-    padding:0 0 20px;
+    margin:0 0 0 0;
+    padding:0 0px 15px 0px;
     color: azure;
-    text-align: center;
+    font-size: 40px;
+    text-align: right;
 }
 .SignUpBox p{
     margin:0;
-    padding: 0;
+    padding: 0 0 4px 0;
     font-weight: bold;
     color:#fff;
 }
@@ -47,6 +48,7 @@ h1{
     color:rgba(255,255,255,.5);
 }
 .SignUpBox input[type="submit"]{
+    margin: 30px 0 0 0;
     border:none;
     outline:none;
     height:40px;
@@ -55,6 +57,7 @@ h1{
     color: whitesmoke;
     cursor:pointer;
     border-radius:20px;
+    padding: 0 0 0 0;
 }
 .SignUpBox input[type="submit"]:hover{
     background: whitesmoke ;
@@ -63,11 +66,13 @@ h1{
 /*Select box*/
 select{
     font-size: 100%;
+    border: none;
     background: transparent;
-    border: .5px solid #fff;
-    padding: .5rem 7rem .3rem 5rem;
-    border-radius:8px;
-    color: darkgray;
+    border-bottom: 1px solid #ffffff;
+    outline: none;
+    margin:0 0 0 5px;
+    padding: 13px 155px 3px 70px;
+    color: darkgrey;
 }
 /*.box6 .input{
     border: 1px solid #ddd;
