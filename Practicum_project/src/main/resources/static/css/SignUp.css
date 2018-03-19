@@ -2,24 +2,24 @@ body{
     margin:0;
     padding:0;
     background-size: cover;
-    background: url(../WebProject1/includes/BG1.jpg);
+    background: url(../images/BG1.jpg);
     /*background-repeat: no-repeat;*/
-    font-family: sans-serif;
+    font-family:sans-serif;
 }
 .SignUpBox{
-    padding: 80px 40px;
+    padding: 20px 40px;
     position: absolute;
     top:50%;
     left: 50%;
     transform: translate(-50%,-50%);
     width:400px;
-    height: 750px;
+    height: 800px;
     box-sizing:border-box;
     background: rgba(0,0,0,.5);
 }
 h1{
     margin:0 0 0 0;
-    padding:0 0px 15px 0px;
+    padding:0 0px 10px 0px;
     color: azure;
     font-size: 40px;
     text-align: right;
@@ -44,7 +44,7 @@ h1{
     color: #ffffff;
     font-size: 16px;
 }
-::placeholder{
+.placeholder{
     color:rgba(255,255,255,.5);
 }
 .SignUpBox input[type="submit"]{
@@ -59,14 +59,13 @@ h1{
     border-radius:20px;
     padding: 0 0 0 0;
 }
-.SignUpBox input[type="submit"]:hover{
+.SignUpBox .submit:hover{
     background: whitesmoke ;
     color: steelblue;
 }
 /*Select box*/
 select{
     font-size: 100%;
-    text-indent: 0px;
     border: none;
     background: transparent;
     border-bottom: 1px solid #ffffff;
@@ -75,7 +74,9 @@ select{
     padding: 13px 155px 3px 70px;
     color: darkgrey;
 }
-
+.img{
+    width: 120px;
+}
 /*.box6 .input{
     border: 1px solid #ddd;
     border-radius: 3px;

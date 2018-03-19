@@ -4,71 +4,105 @@
 <html>
 <head>
     <title>practicum</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="SignUp.css">
+    <link rel="stylesheet" href="css/SignUp.css"/>
+    <%--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>--%>
+    <script type="text/javascript">
+        function changeImage() {
+
+            document.getElementById("img").src = "${pageContext.request.contextPath}/imagecode?time="
+                + new Date().getTime();
+        }
+        function check(){
+
+           var list = document.getElementsByTagName("input");
+
+           for(var i=0;i<list.length;i++){
+               if(list[i].value==""){
+                   alert("you should fill in the form");
+                   return false;
+               }
+           }
+            return true;
+        }
+    </script>
 </head>
 
 <body>
+    <%--<form action="${pageContext.request.contextPath}/register.do">--%>
+        <%--<font color="#ff0000">${email_msg}</font><br />--%>
+        <%--Username:<input type="text" name="username"><br/>--%>
+        <%--Password:<input type="text" name="password"><br/>--%>
+        <%--ID_Number:<input type="text" name="id_number"/><br/>--%>
+        <%--Degree:<select name="degree">--%>
+        <%--<option value="Bachelor">Bachelor</option>--%>
+        <%--<option value="Master">Master</option>--%>
+        <%--<option value="Phd">Phd</option>--%>
+    <%--</select><br/>--%>
+        <%--College:<input type="text" name="college"><br/>--%>
+        <%--Email:<input type="text" name="email"><br/>--%>
+        <%--<input type="submit"/>--%>
+    <%--</form>--%>
     <div class="SignUpBox">
-        <img src="" class="user">
+        <h1> Sign Up</h1>
 
-        <h1 class=""> Sign Up</h1>
+        <form method="post" action="${pageContext.request.contextPath}/register.do" onsubmit="return check()">
 
-        <form class=""  id="Form" action="${pageContext.request.contextPath}/register.do">
-
-            <div id="s0">
+        <font color="#ff0000">${email_msg}</font><br />
+            <div>
                 <p>Username</p>
-                <div id="box1">
-                    <input type="text" id="Username" placeholder="Create a Username" name="username">
+                <div>
+                    <input type="text" id="Username" placeholder="Create a Username" name="username" />
                 </div>
             </div>
 
-
-            <div id="s1">
+            <div>
                 <p>Password</p>
-                <div id="box2">
-                    <input type="password" id="password" placeholder="Create a Password" name="password">
+                <div>
+                    <input type="password" id="password" placeholder="Create a Password" name="password" />
                 </div>
             </div>
 
-
-            <div id="s3">
+            <div>
                 <p>ID Number</p>
-                <div id="box3">
-                    <input type="text" id="id_number" placeholder="Please enter your ID number" name="id_number">
+                <div>
+                    <input type="text" id="id_number" placeholder="Please enter your ID number" name="id_number" />
                 </div>
             </div>
 
-
-            <div id="s4">
+            <div>
                 <p>College</p>
-                <div id="box4">
-                    <input type="text" id="college" placeholder="Please enter your college" name="college">
+                <div>
+                    <input type="text" id="college" placeholder="Please enter your college" name="college" />
                 </div>
             </div>
 
-            <div id="s5">
+            <div>
                 <p>Email</p>
-                <div id="box5">
-                    <input type="email" id="email" placeholder="Please enter your Email" name="email">
+                <div>
+                    <input type="email" id="email" placeholder="Please enter your Email" name="email" />
                 </div>
             </div>
 
-
-            <div id="s6">
+            <div>
                 <p>Academic Degree</p>
-                <div class="select">
-                <select name="degree" id="degree">
-                    <option value="Bachelor">Bachelor</option>
-                    <option value="Master">Master</option>
-                    <option value="Phd">Phd</option>
-                </select>
+                <div>
+                    <select name="degree" id="degree" >
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Master">Master</option>
+                        <option value="Phd">Phd</option>
+                    </select>
                 </div>
             </div>
 
-
+        <font color="#ff0000">${errorMsg}</font><br />
+        <div>
+            <p>VerifyCode</p>
+                <input type="text"  id="checkCode" placeholder="Please enter verify code" name="checkCode"/>
+                <img src="${pageContext.request.contextPath}/imagecode" class="img" id="img"/>&nbsp;&nbsp;
+                <a href="javascript:void(0);" onclick="changeImage()">Can not see clearly</a>
+        </div>
             <div id="submit">
-                <input type="submit" name="" value="Register">
+                <button type="submit" class="submit">Submit</button>
             </div>
     </form>
     </div>

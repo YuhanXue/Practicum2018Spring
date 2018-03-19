@@ -6,7 +6,9 @@ import edu.monmouth.practicum.Dao.UserDao;
 import edu.monmouth.practicum.Domain.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,6 +24,7 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 @Controller
 public class UserController {
@@ -31,7 +34,8 @@ public class UserController {
     @Resource
     UserDao userDao;
     @RequestMapping("register.do")
-    public String Register(User user,HttpSession session,HttpServletRequest request) throws Exception {
+    public String Register(@Valid User user, HttpSession session, HttpServletRequest request) throws Exception {
+
         String email = user.getEmail();
         String RULE_EMAIL = "^\\w+((-\\w+)|(\\.\\w+))*\\@[A-Za-z0-9]+((\\.|-)[A-Za-z0-9]+)*\\.[A-Za-z0-9]+$";
         Pattern p = Pattern.compile(RULE_EMAIL);

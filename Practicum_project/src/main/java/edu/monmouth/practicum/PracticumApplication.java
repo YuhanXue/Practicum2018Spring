@@ -25,15 +25,17 @@ public class PracticumApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PracticumApplication.class, args);
 	}
-	@RequestMapping("/")
+//	@RequestMapping("/")
+//	public String register(HttpSession session){
+//		List<Job> jobs = new ArrayList<Job>();
+//		jobs = jobDao.findByRequirementLike("%"+"java"+"%");
+//		session.setAttribute("jobs",jobs);
+//		return "Home";
+//	}
+@RequestMapping("/")
 	public String register(HttpSession session){
-//		List<User> users = new ArrayList<User>();
-//		users = userDao.findAll();
-//		session.setAttribute("users",users);
-		List<Job> jobs = new ArrayList<Job>();
-		jobs = jobDao.findByRequirementLike("%"+"java"+"%");
-		session.setAttribute("jobs",jobs);
-		return "Home";
+
+		return "register";
 	}
 	@RequestMapping("/verify")
 	public String verify(HttpSession session){

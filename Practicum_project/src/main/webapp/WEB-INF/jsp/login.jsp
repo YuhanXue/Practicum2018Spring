@@ -1,38 +1,51 @@
+<%--
+  Created by IntelliJ IDEA.
+  User: chengli
+  Date: 2018/2/6
+  Time: 14:40
+  To change this template use File | Settings | File Templates.
+--%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Login</title>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-
-	<link rel="stylesheet" href="Login.css">
-
+    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
+    <%--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>--%>
+    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        .form-horizontal{
+            padding: 150px 200px;
+        }
+    </style>
 </head>
 
-
 <body>
-	<div class="loginBox" id="div0">
-		<img src="../WebProject1/includes/UserProfile.png" class="user">
-		<h1 class="">User Login</h1>
-		<font color="#ff0000">${user_msg}</font><br />
 
-			<form action="${pageContext.request.contextPath}/login.do">
-			<div id="div1">
-				<label for="Username" class="col-sm-2 control-label">Username</label>
-						<input type="text" id="Username" placeholder="Enter Username" name="username">
-			</div>
-
-				<div id="div2">
-					<p>Password</p>
-					<input type="password" id="password" placeholder="Enter Password" name="password">
-				</div>
-
-				<div id="div3">
-					<input type="submit" name="" value="Sign In">
-				</div>
-
-				<a href="">Forget Your Password ?</a>
-			</form>
-
-	</div> <!--end class container-->
+<div class="container">
+    <div class="row">
+<form class="form-horizontal" action="${pageContext.request.contextPath}/login.do">
+    <h1 class="page-header"><span class="glyphicon glyphicon-user"></span> User Login</h1>
+    <font color="#ff0000">${user_msg}</font><br />
+    <div class="form-group">
+        <label for="Username" class="col-sm-2 control-label">Username</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control"  id="Username" placeholder="Username" name="username">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password" class="col-sm-2 control-label">Password</label>
+        <div class="col-sm-6">
+            <input type="password" class="form-control" id="password" placeholder="Password" name="password">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+</form>
+</div>
+</div>
 </body>
 </html>
