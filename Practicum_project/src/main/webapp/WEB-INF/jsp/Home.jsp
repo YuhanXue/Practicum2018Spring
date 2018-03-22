@@ -22,7 +22,7 @@
                 <li><a>Find Salaries</a></li>
                 <li><a>Find Resume</a></li>
                 <li><a>Post job</a></li>
-                <li class="messages" id="messages"><a>Messages</a>
+                <li class="messages" id="messages"><a>User Center</a>
 
                     <ul class="box" id="box">
                         <li><a href="">标准</a></li>
