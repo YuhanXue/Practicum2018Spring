@@ -35,7 +35,8 @@ public class PracticumApplication {
 @RequestMapping("/")
 	public String register(HttpSession session){
 
-		return "company";
+		return "modifyuserinfo";
+
 	}
 	@RequestMapping("/verify")
 	public String verify(HttpSession session){
