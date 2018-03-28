@@ -205,3 +205,13 @@ s, i, em {
     margin-left: 60px;
     font-size: 15px;
 }
+.searcharea .content{
+    position: absolute;
+    width:128px;
+    text-align:left;
+    top:10px;
+    color:black;
+    float:left;
+    margin-top: 20px;
+    display: none;
+}

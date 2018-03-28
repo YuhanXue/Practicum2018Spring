@@ -56,7 +56,7 @@
             <input type="text" class="cmp-discovery-input cmp-discovery-curated" placeholder="Enter a company name" id="inputtable"/>
             <button type="submit" class="btn btn-primary">search</button>
         </div>
-        <div class="content" id="content" ng-app="myApp" ng-controller="myCtrl" style="background-color:white;width:128px; text-align:left;margin-left:1020px;color:black;float:left;margin-top: -20px;display: none">
+        <div class="content" id="content" style="background-color: #fff; top:10px;">
 
         </div>
     </div>
@@ -111,21 +111,23 @@ $(document).ready(function(){
          return;
         }
         var time = new Date().getTime();
-    });
-    $.ajax({
-        type:"GET",
-        url:"${pageContext.request.contextPath}/findcompany.do",
-        success:function (data) {
-            var res = data.split(",");
-            var html  = "";
-            for(var i=0;i<res.length;i++){
-                html+="<div onclick='setSearch_onclick(this)' onmouseout='changeBackColor_out(this)' onmouseover='changeBackColor_over(this)'>"+res[i]+"</div>";
+        $.ajax({
+            type:"GET",
+            url:"${pageContext.request.contextPath}/findcompany.do",
+            data:{name:content,time:time},
+            success:function (data) {
+                var res = data.split(",");
+                var html  = "";
+                for(var i=0;i<res.length;i++){
+                    html+="<div onclick='setSearch_onclick(this)' onmouseout='changeBackground_out(this)' onmouseover='changeBackground_over(this)'>"+res[i]+"</div>";
+                }
+                $("#content").html(html);
+                $("#content").css("display","block");
             }
-            $("#content").html(html);
-            $("#content").css("display","block");
-        }
 
+        });
     });
+
 });
 function changeBackground_over(div){
     div.style.background="gray";
@@ -135,7 +137,7 @@ function changeBackground_out(div) {
 }
 function setSearch_onclick(div) {
     $(document).ready(function () {
-        $("#inputtable").val(div.innerHeight);
+        $("#inputtable").val(div.innerHTML);
         $("#content").css("display","none");
     });
 }
