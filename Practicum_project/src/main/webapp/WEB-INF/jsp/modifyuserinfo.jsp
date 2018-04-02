@@ -21,7 +21,7 @@
                     <tr>
                         <td class="listtd"><img src="images/miniicon.gif" width="9"
                                                 height="6" />&nbsp;&nbsp;&nbsp;&nbsp; <a
-                                href="modifyuserinfo.jsp">modfiy user information</a></td>
+                                href="${pageContext.request.contextPath}/ModifyUserInfo">modfiy user information</a></td>
                     </tr>
 
                     <tr>
@@ -39,8 +39,8 @@
             <td>
                 <div style="text-align:right; margin:5px 10px 5px 0px">
                     <a href="index.jsp">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;<a
-                        href="myAccount.jsp">&nbsp;myAccount</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;<a
-                        href="${pageContext.request.contextPath}/findUserById?id=${user.id}">modify user information</a>
+                        href="myAccount.jsp">&nbsp;myAccount</a>&nbsp;&nbsp;&nbsp;&nbsp;&gt;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a href="${pageContext.request.contextPath}/findUserById?id=${user.id}">modify user information</a>
                 </div>
 
 
@@ -68,23 +68,22 @@
                                         <td><input type="password" name="password"
                                                    class="textinput" />
                                         </td>
-                                        <td><font color="#999999">Password set at least 6, please distinguish case</font>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">change ID_Number：</td>
+                                        <td><input type="text" name="id_number"
+                                                   class="textinput" />
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td style="text-align:right">gender：</td>
-                                        <td colspan="2">&nbsp;&nbsp;<input type="radio"
-                                                                           name="gender" value="male" ${user.gender=='male'? "checked='checked'":""} /> male
-                                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input
-                                                    type="radio" name="gender" value="female" ${user.gender=='female'? "checked='checked'":""} />female</td>
-                                    </tr>
-                                    <tr>
-                                        <td style="text-align:right">Contact information：</td>
-                                        <td colspan="2"><input name="telephone" type="text"
-                                                               value="${user.telephone}" class="textinput" />
+                                        <td style="text-align:right">change Academic Degree</td>
+                                        <td><select name="degree" id="degree" >
+                                            <option value="Bachelor" ${user.degree=='Bachelor'?"selected='selected'":""}>Bachelor</option>
+                                            <option value="Master" ${user.degree=='Master'?"selected='selected'":""}>Master</option>
+                                            <option value="Phd" ${user.degree=='Phd'?"selected='selected'":""}>Phd</option>
+                                        </select>
                                         </td>
                                     </tr>
-
                                     <tr>
                                         <td style="text-align:right">&nbsp;</td>
                                         <td>&nbsp;</td>

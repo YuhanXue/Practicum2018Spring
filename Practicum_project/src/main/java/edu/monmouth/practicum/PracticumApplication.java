@@ -35,14 +35,8 @@ public class PracticumApplication {
 @RequestMapping("/")
 	public String register(HttpSession session){
 
-		return "modifyuserinfo";
+		return "login";
 
 	}
-	@RequestMapping("/verify")
-	public String verify(HttpSession session){
-		User user = (User) session.getAttribute("user");
-		user.setVerified(1);
-		userDao.save(user);
-		return "Verify";
-	}
+
 }

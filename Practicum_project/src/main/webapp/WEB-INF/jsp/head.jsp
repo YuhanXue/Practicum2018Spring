@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
     <title>head</title>
@@ -24,16 +25,10 @@
                 <li class="messages" id="messages"><a style="font-size: 17px;line-height: 30px;">User Center</a>
 
                     <ul class="box" id="box">
-                        <li><a href="">标准</a></li>
-                        <li><a href="">教程</a></li>
-                        <li><a href="">技术文章</a></li>
-                        <li><a href="">常见问题</a></li>
-                        <li><a href="">布局教程专题</a></li>
-                        <li><a href="">CSS菜单</a></li>
-                        <li><a href="">浏览器兼容</a></li>
-                        <li><a href="">滚动条相关</a></li>
-                        <li><a href="">圆角矩形专题</a></li>
-                        <li><a href="">CSS特效欣赏专题</a></li>
+                        <%--<li><a href="${pageContext.request.contextPath}/ModifyUserInfo">modify user information and resume</a></li>--%>
+                        <li><a href="${pageContext.request.contextPath}/myAccount">Welcome ${user.username}</a></li>
+                        <li><a href="">company applied</a></li>
+                        <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
                     </ul>
 
                 </li>

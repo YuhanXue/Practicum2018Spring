@@ -65,6 +65,7 @@ public class UserController {
                 javaMail javaMail = new javaMail();
                 javaMail.sendmail(user.getEmail());
                 session.removeAttribute("simpleCaptcha");
+                session.setAttribute("user",user);
                 return "login";
             }
             else{
@@ -74,6 +75,10 @@ public class UserController {
         }
 
 
+    }
+    @RequestMapping("login")
+    public String loginview(){
+        return "login";
     }
     @RequestMapping("login.do")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session){
@@ -88,7 +93,8 @@ public class UserController {
             }else{
 //            user.setVerified(1);
 //            userDao.save(user);
-            return "index";
+                session.setAttribute("user",user);
+            return "Home";
             }
         }
 
@@ -106,5 +112,38 @@ public class UserController {
             return "";
         }
         return null;
+    }
+
+    @RequestMapping("ModifyUserInfo")
+    public String ModifyUserInfoView(){
+        return "modifyuserinfo";
+    }
+    @RequestMapping("ModifyUserInfo.do")
+    public String ModifyUserInfo(User user,HttpSession session){
+        User user1 = (User) session.getAttribute("user");
+        userDao.updateUser(user.getPassword(),user.getId_number(),user.getDegree(),user1.getId());
+        session.removeAttribute("user");
+        User user2 = userDao.findById(user1.getId());
+        session.setAttribute("user",user2);
+
+        //System.out.println(user2.getEmail()+"--------------------");
+        return "redirect:ModifyUserInfo";
+    }
+    @RequestMapping("myAccount")
+    public String myAccountView(){
+        return "myAccount";
+    }
+
+    @RequestMapping("logout.do")
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "logoutSuccess";
+    }
+    @RequestMapping("/verify")
+    public String verify(HttpSession session){
+        User user = (User) session.getAttribute("user");
+        user.setVerified(1);
+        userDao.save(user);
+        return "Verify";
     }
 }

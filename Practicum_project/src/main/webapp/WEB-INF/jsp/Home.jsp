@@ -22,19 +22,12 @@
                 <li><a>Find Salaries</a></li>
                 <li><a>Find Resume</a></li>
                 <li><a>Post job</a></li>
-                <li class="messages" id="messages"><a>User Center</a>
+                <li class="messages" id="messages"><a>Welcome ${user.username}</a>
 
                     <ul class="box" id="box">
-                        <li><a href="">标准</a></li>
-                        <li><a href="">教程</a></li>
-                        <li><a href="">技术文章</a></li>
-                        <li><a href="">常见问题</a></li>
-                        <li><a href="">布局教程专题</a></li>
-                        <li><a href="">CSS菜单</a></li>
-                        <li><a href="">浏览器兼容</a></li>
-                        <li><a href="">滚动条相关</a></li>
-                        <li><a href="">圆角矩形专题</a></li>
-                        <li><a href="">CSS特效欣赏专题</a></li>
+                        <li><a href="${pageContext.request.contextPath}/myAccount">User center</a></li>
+                        <li><a href="">company applied</a></li>
+                        <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
                     </ul>
 
                 </li>

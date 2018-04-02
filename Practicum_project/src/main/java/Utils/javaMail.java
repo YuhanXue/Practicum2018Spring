@@ -100,7 +100,7 @@ public class javaMail {
         message.setSubject("this is a email that use to verify your email account", "UTF-8");
 
         // 5. Content: 邮件正文（可以使用html标签）（内容有广告嫌疑，避免被邮件服务器误认为是滥发广告以至返回失败，请修改发送内容）
-        message.setContent("<html><head></head><body><h1>这是一封激活邮件,激活请点击以下链接</h1><a>localhost:8080/verify</a></body></html>", "text/html;charset=UTF-8");
+        message.setContent("<html><head></head><body><h1>this is a email that use to verify your email account please click this to verify your account</h1><a>localhost:8080/verify</a></body></html>", "text/html;charset=UTF-8");
 
         // 6. 设置发件时间
         message.setSentDate(new Date());
