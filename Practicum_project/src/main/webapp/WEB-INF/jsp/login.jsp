@@ -48,7 +48,10 @@
             <input type="submit" value="Sign In"/>
         </div>
 
-        <a href="#">Forget Your Password ?</a>
+        <div>
+        <p><a href="#">Forget Your Password ?</a></p>
+        <p><a href="register.jsp">Don't have an account?</a></p>
+        </div>
     </form>
 </div>
 
