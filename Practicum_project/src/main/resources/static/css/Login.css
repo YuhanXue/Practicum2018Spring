@@ -67,8 +67,9 @@ h1{
     background: aqua ;
     color: cornflowerblue;
 }
-.loginBox a
+.loginBox a .fp
 {
+    text-align: center;
     color: lightblue;
     font-size: 14px;
     font-weight: bold;
