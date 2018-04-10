@@ -18,6 +18,15 @@ public class User {
     private String degree;
     private String email;
     private int verified;
+    private String jobarea;
+
+    public String getJobarea() {
+        return jobarea;
+    }
+
+    public void setJobarea(String jobarea) {
+        this.jobarea = jobarea;
+    }
 
     public Integer getId() {
         return id;

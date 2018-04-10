@@ -17,8 +17,8 @@
     <div class="w">
         <div class="scleft">
             <ul class="main">
-                <li><a href="#" class="findjob" style="display:block;float: left; font-size: 17px;line-height: 30px;">Find job</a></li>
-                <li><a style="display:block;font-size: 17px;line-height: 30px;">Company Review</a></li>
+                <li><a href="${pageContext.request.contextPath}/Homeview" class="findjob" style="display:block;float: left; font-size: 17px;line-height: 30px;">Find job</a></li>
+                <li><a href="${pageContext.request.contextPath}/Company" style="display:block;font-size: 17px;line-height: 30px;">Company Review</a></li>
                 <li><a style="display:block;font-size: 17px;line-height: 30px;">Find Salaries</a></li>
                 <li><a style="display:block;font-size: 17px;line-height: 30px;">Find Resume</a></li>
                 <li><a style="display:block;font-size: 17px;line-height: 30px;">Post job</a></li>

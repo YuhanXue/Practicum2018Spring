@@ -14,37 +14,38 @@
 </head>
 <body>
 <div class="w">
-    <div class="shortcut">
-        <div class="w">
-            <div class="scleft">
-                <ul class="main">
-                    <li><a href="#" class="findjob">Find job</a></li>
-                    <li><a>Company Review</a></li>
-                    <li><a>Find Salaries</a></li>
-                    <li><a>Find Resume</a></li>
-                    <li><a>Post job</a></li>
-                    <li class="messages" id="messages"><a>User Center</a>
+    <%--<div class="shortcut">--%>
+        <%--<div class="w">--%>
+            <%--<div class="scleft">--%>
+                <%--<ul class="main">--%>
+                    <%--<li><a href="#" class="findjob">Find job</a></li>--%>
+                    <%--<li><a>Company Review</a></li>--%>
+                    <%--<li><a>Find Salaries</a></li>--%>
+                    <%--<li><a>Find Resume</a></li>--%>
+                    <%--<li><a>Post job</a></li>--%>
+                    <%--<li class="messages" id="messages"><a>User Center</a>--%>
 
-                        <ul class="box" id="box">
-                            <li><a href="">标准</a></li>
-                            <li><a href="">教程</a></li>
-                            <li><a href="">技术文章</a></li>
-                            <li><a href="">常见问题</a></li>
-                            <li><a href="">布局教程专题</a></li>
-                            <li><a href="">CSS菜单</a></li>
-                            <li><a href="">浏览器兼容</a></li>
-                            <li><a href="">滚动条相关</a></li>
-                            <li><a href="">圆角矩形专题</a></li>
-                            <li><a href="">CSS特效欣赏专题</a></li>
-                        </ul>
+                        <%--<ul class="box" id="box">--%>
+                            <%--<li><a href="">标准</a></li>--%>
+                            <%--<li><a href="">教程</a></li>--%>
+                            <%--<li><a href="">技术文章</a></li>--%>
+                            <%--<li><a href="">常见问题</a></li>--%>
+                            <%--<li><a href="">布局教程专题</a></li>--%>
+                            <%--<li><a href="">CSS菜单</a></li>--%>
+                            <%--<li><a href="">浏览器兼容</a></li>--%>
+                            <%--<li><a href="">滚动条相关</a></li>--%>
+                            <%--<li><a href="">圆角矩形专题</a></li>--%>
+                            <%--<li><a href="">CSS特效欣赏专题</a></li>--%>
+                        <%--</ul>--%>
 
-                    </li>
-                </ul>
+                    <%--</li>--%>
+                <%--</ul>--%>
 
-            </div>
+            <%--</div>--%>
 
-        </div>
-    </div>
+        <%--</div>--%>
+    <%--</div>--%>
+        <jsp:include page="head.jsp"></jsp:include>
     <table width="100%" border="0" cellspacing="0" class="tableopen">
         <tr>
             <td bgcolor="#A3E6DF" class="tableopentd01">Job_id</td>
@@ -52,6 +53,7 @@
             <td bgcolor="#A3B6E6" class="tableopentd01">Requirement</td>
             <td bgcolor="#A3E2E6" class="tableopentd01">location</td>
             <td bgcolor="#A3E2E6" class="tableopentd01">contact</td>
+            <td bgcolor="#A3E2E6" class="tableopentd01">Jobarea</td>
         </tr>
 
 
@@ -66,6 +68,7 @@
                 <td class="tableopentd02">${job.requirement}</td>
                 <td class="tableopentd02">${job.location}</td>
                 <td class="tableopentd02">${job.contact}</td>
+                <td class="tableopentd02">${job.jobarea}</td>
             </tr>
         </c:forEach>
     </table>

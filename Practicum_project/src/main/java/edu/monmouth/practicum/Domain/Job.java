@@ -15,6 +15,15 @@ public class Job {
     public String requirement;
     public String location;
     public String contact;
+    public String jobarea;
+
+    public String getJobarea() {
+        return jobarea;
+    }
+
+    public void setJobarea(String jobarea) {
+        this.jobarea = jobarea;
+    }
 
     public String getRequirement() {
         return requirement;

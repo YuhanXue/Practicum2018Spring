@@ -3,7 +3,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-    <title>电子书城</title>
+    <title>modfiyuserinfo</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
 </head>
 
@@ -48,7 +48,7 @@
                 <table cellspacing="0" class="infocontent">
                     <tr>
                         <td>
-                            <form action="${pageContext.request.contextPath}/ModifyUserInfo.do" method="post">
+                            <form action="${pageContext.request.contextPath}/ModifyUserInfo.do" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="id" value="${u.id}">
                                 <table width="100%" border="0" cellspacing="2" class="upline">
                                     <tr>
@@ -81,6 +81,32 @@
                                             <option value="Bachelor" ${user.degree=='Bachelor'?"selected='selected'":""}>Bachelor</option>
                                             <option value="Master" ${user.degree=='Master'?"selected='selected'":""}>Master</option>
                                             <option value="Phd" ${user.degree=='Phd'?"selected='selected'":""}>Phd</option>
+                                        </select>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Resume：</td>
+                                        <td><input type="file" name="file"  />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="text-align:right">Job area:</td>
+                                        <td><select name="jobarea" id="jobarea" >
+                                            <option value="Anthropology" ${user.jobarea=='Anthropology'?"selected='selected'":""}>Anthropology</option>
+                                            <option value="Accounting" ${user.jobarea=='Accounting'?"selected='selected'":""}>Accounting</option>
+                                            <option value="Biology" ${user.jobarea=='Biology'?"selected='selected'":""}>Biology</option>
+                                            <option value="Business" ${user.jobarea=='Business'?"selected='selected'":""}>Business</option>
+                                            <option value="Nursing" ${user.jobarea=='Nursing'?"selected='selected'":""}>Nursing</option>
+                                            <option value="Art" ${user.jobarea=='Art'?"selected='selected'":""}>Art</option>
+                                            <option value="Finance" ${user.jobarea=='Finance'?"selected='selected'":""}>Finance</option>
+                                            <option value="Management" ${user.jobarea=='Management'?"selected='selected'":""}>Management</option>
+                                            <option value="Education" ${user.jobarea=='Education'?"selected='selected'":""}>Education</option>
+                                            <option value="History" ${user.jobarea=='History'?"selected='selected'":""}>"History</option>
+                                            <option value="Music" ${user.jobarea=='Music'?"selected='selected'":""}>Music</option>
+                                            <option value="Social Work" ${user.jobarea=='Social Work'?"selected='selected'":""}>Social Work</option>
+                                            <option value="Psychology" ${user.jobarea=='Psychology'?"selected='selected'":""}>Psychology</option>
+                                            <option value="Computer Science" ${user.jobarea=='Computer Science'?"selected='selected'":""}>Computer Science</option>
+                                            <option value="Software Engineer" ${user.jobarea=='Software Engineer'?"selected='selected'":""}>Software Engineer</option>
                                         </select>
                                         </td>
                                     </tr>

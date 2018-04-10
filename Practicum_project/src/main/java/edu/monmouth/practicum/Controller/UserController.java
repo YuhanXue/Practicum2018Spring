@@ -2,8 +2,11 @@ package edu.monmouth.practicum.Controller;
 
 import Utils.ImageCode;
 import Utils.javaMail;
+import edu.monmouth.practicum.Dao.JobDao;
 import edu.monmouth.practicum.Dao.UserDao;
+import edu.monmouth.practicum.Domain.Job;
 import edu.monmouth.practicum.Domain.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
@@ -11,11 +14,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.io.OutputStream;
+import java.io.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -33,6 +37,8 @@ public class UserController {
      */
     @Resource
     UserDao userDao;
+    @Autowired
+    JobDao jobDao;
     @RequestMapping("register.do")
     public String Register(@Valid User user, HttpSession session, HttpServletRequest request) throws Exception {
 
@@ -76,6 +82,14 @@ public class UserController {
 
 
     }
+    @RequestMapping("register")
+    public String RegisterView(){
+        return "register";
+    }
+    @RequestMapping("Home")
+    public String HomeView(){
+        return "Home";
+    }
     @RequestMapping("login")
     public String loginview(){
         return "login";
@@ -94,6 +108,8 @@ public class UserController {
 //            user.setVerified(1);
 //            userDao.save(user);
                 session.setAttribute("user",user);
+                List<Job> jobs = jobDao.findByJobareaLike("%"+user.getJobarea()+"%");
+                session.setAttribute("jobs",jobs);
             return "Home";
             }
         }
@@ -118,17 +134,49 @@ public class UserController {
     public String ModifyUserInfoView(){
         return "modifyuserinfo";
     }
-    @RequestMapping("ModifyUserInfo.do")
-    public String ModifyUserInfo(User user,HttpSession session){
+    @PostMapping("ModifyUserInfo.do")
+    public String ModifyUserInfo(@RequestParam("password") String password,@RequestParam("id_number") String id_number,@RequestParam("degree") String degree,HttpSession session,@RequestParam("file") MultipartFile file, HttpServletRequest request){
         User user1 = (User) session.getAttribute("user");
-        userDao.updateUser(user.getPassword(),user.getId_number(),user.getDegree(),user1.getId());
+        if(!id_number.equals("")&&!password.equals("")){
+            userDao.updateUser(password, Integer.parseInt(id_number),degree,user1.getId());
+        }
         session.removeAttribute("user");
         User user2 = userDao.findById(user1.getId());
         session.setAttribute("user",user2);
+        if(!file.isEmpty()){
+            String saveFileName = file.getOriginalFilename();
+            File saveFile = new File(request.getServletContext().getRealPath("/Resume/")+saveFileName);
+            if(!saveFile.getParentFile().exists()){
+                saveFile.getParentFile().mkdir();
+            }
+            BufferedOutputStream bufferedOutputStream = null;
+            try {
+                bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(saveFile));
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            }
+            try {
+                bufferedOutputStream.write(file.getBytes());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                bufferedOutputStream.flush();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try {
+                bufferedOutputStream.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "redirect:Home";
 
-        //System.out.println(user2.getEmail()+"--------------------");
-        return "redirect:ModifyUserInfo";
+        }else {
+            return "redirect:ModifyUserInfo";
+        }
     }
+
     @RequestMapping("myAccount")
     public String myAccountView(){
         return "myAccount";
@@ -146,4 +194,43 @@ public class UserController {
         userDao.save(user);
         return "Verify";
     }
+    @RequestMapping("Company")
+    public String companyview(){
+        return "company";
+    }
+//    @RequestMapping("upload_resume.do")
+//    public String upload_resume(@RequestParam("file") MultipartFile file, HttpServletRequest request){
+//        if(!file.isEmpty()){
+//            String saveFileName = file.getOriginalFilename();
+//            File saveFile = new File(request.getServletContext().getRealPath("/Resume/")+saveFileName);
+//            if(!saveFile.getParentFile().exists()){
+//                saveFile.getParentFile().mkdir();
+//            }
+//            BufferedOutputStream bufferedOutputStream = null;
+//            try {
+//                bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(saveFile));
+//            } catch (FileNotFoundException e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                bufferedOutputStream.write(file.getBytes());
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                bufferedOutputStream.flush();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            try {
+//                bufferedOutputStream.close();
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+//            return "redirect:Home";
+//        }else {
+//            return "redirect:ModifyUserInfo";
+//        }
+//    }
+
 }

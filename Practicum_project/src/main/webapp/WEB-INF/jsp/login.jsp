@@ -33,6 +33,7 @@
 <div class="loginBox">
     <img src="../images/UserProfile.png" class="user"/>
     <h1>User Login</h1>
+    <h5 style="color: red;">${user_msg}</h5>
     <form method="post" action="${pageContext.request.contextPath}/login.do" onsubmit="return check()">
         <div>
             <p>Username</p>
@@ -48,10 +49,7 @@
             <input type="submit" value="Sign In"/>
         </div>
 
-        <div>
-        <p><a href="#">Forget Your Password ?</a></p>
-        <p><a href="register.jsp">Don't have an account?</a></p>
-        </div>
+        <a href="${pageContext.request.contextPath}/register">create a new account</a>
     </form>
 </div>
 

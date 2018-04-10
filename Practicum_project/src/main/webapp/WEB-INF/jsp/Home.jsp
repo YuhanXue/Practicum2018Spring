@@ -18,7 +18,7 @@
         <div class="scleft">
             <ul class="main">
                 <li><a href="#" class="findjob">Find job</a></li>
-                <li><a>Company Review</a></li>
+                <li><a href="${pageContext.request.contextPath}/Company">Company Review</a></li>
                 <li><a>Find Salaries</a></li>
                 <li><a>Find Resume</a></li>
                 <li><a>Post job</a></li>
@@ -63,6 +63,7 @@
             <td bgcolor="#A3B6E6" class="tableopentd01">Requirement</td>
             <td bgcolor="#A3E2E6" class="tableopentd01">location</td>
             <td bgcolor="#A3E2E6" class="tableopentd01">contact</td>
+            <td bgcolor="#A3E2E6" class="tableopentd01">Jobarea</td>
         </tr>
 
 
@@ -77,6 +78,7 @@
                 <td class="tableopentd02">${job.requirement}</td>
                 <td class="tableopentd02">${job.location}</td>
                 <td class="tableopentd02">${job.contact}</td>
+                <td class="tableopentd02">${job.jobarea}</td>
             </tr>
         </c:forEach>
     </table>

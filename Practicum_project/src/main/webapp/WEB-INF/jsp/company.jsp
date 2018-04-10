@@ -48,16 +48,15 @@
            data-slide="next">&rsaquo;</a>
     </div>
 </div>
-<div class="searcharea">
+<div class="searcharea" style="height: 400px;">
     <div class="search">
         <p class="title1">Find great places to work</p>
         <p class="smaller">Discover <b>18 million</b> company reviews</p>
         <div class="cmp-discovery-curated">
             <input type="text" class="cmp-discovery-input cmp-discovery-curated" placeholder="Enter a company name" id="inputtable"/>
             <button type="submit" class="btn btn-primary">search</button>
-        </div>
-        <div class="content" id="content" style="background-color: #fff; top:10px;">
-
+            <div class="content" id="content" style="background-color: #fff;top:20px; width: 100%;font-size: 17px;color: black;float: left">
+            </div>
         </div>
     </div>
 
@@ -118,12 +117,23 @@ $(document).ready(function(){
             success:function (data) {
                 var res = data.split(",");
                 var html  = "";
+                var count=0;
+                // if(res.length>6){
+                //     count=6;
+                // }
+                if(res.length<=6){
                 for(var i=0;i<res.length;i++){
                     html+="<div onclick='setSearch_onclick(this)' onmouseout='changeBackground_out(this)' onmouseover='changeBackground_over(this)'>"+res[i]+"</div>";
                 }
                 $("#content").html(html);
-                $("#content").css("display","block");
-            }
+                $("#content").css("display","block");}
+                else {
+                    for(var i=0;i<6;i++){
+                        html+="<div onclick='setSearch_onclick(this)' onmouseout='changeBackground_out(this)' onmouseover='changeBackground_over(this)'>"+res[i]+"</div>";
+                    }
+                    $("#content").html(html);
+                    $("#content").css("display","block");}
+                }
 
         });
     });
