@@ -4,7 +4,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
 <head>
-<title>电子书城</title>
+<title>My Account</title>
 <link rel="stylesheet" href="css/main.css" type="text/css" />
 	<link rel="stylesheet" href="css/base.css" type="text/css"/>
 </head>
@@ -28,7 +28,7 @@
 
 						<tr>
 							<td class="listtd"><img src="images/miniicon.gif" width="9"
-								height="6" />&nbsp;&nbsp;&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/findOrderByUserId.do">Order Tracking</a>
+								height="6" />&nbsp;&nbsp;&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/findOrderByUserId.do">Company applied</a>
 							</td>
 						</tr>
 						<tr>

@@ -1,8 +1,9 @@
 body{
-    margin:0;
-    padding:0;
-    backgroud-size:cover;
+    margin:0px;
+    padding:0px;
+    width: 100%;
     background: url(../images/Loginbg.png) no-repeat;
+    background-size: 100% 100%;
     font-family:sans-serif;
 }
 .loginBox{

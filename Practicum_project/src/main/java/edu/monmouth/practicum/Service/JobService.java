@@ -18,7 +18,7 @@ public class JobService {
     @PersistenceContext
     private EntityManager entityManager;
     public List<Job> Find_Job(String jobname,String location){
-        String sql = "select j.id,j.jobname,j.location,j.requirement,j.contact,j.jobarea from Job j where 1=1";
+        String sql = "select j.id,j.jobname,j.location,j.requirement,j.contact,j.jobarea,j.companyname from Job j where 1=1";
         if(!"".equals(jobname.trim())&&!(jobname==null)){
             sql+=" and requirement like '"+jobname+"'";
         }

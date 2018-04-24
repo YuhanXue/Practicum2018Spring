@@ -49,6 +49,7 @@
     <table width="100%" border="0" cellspacing="0" class="tableopen">
         <tr>
             <td bgcolor="#A3E6DF" class="tableopentd01">Job_id</td>
+            <td bgcolor="#A3D7E6" class="tableopentd01">Company_Name</td>
             <td bgcolor="#A3D7E6" class="tableopentd01">Job_Name</td>
             <td bgcolor="#A3B6E6" class="tableopentd01">Requirement</td>
             <td bgcolor="#A3E2E6" class="tableopentd01">location</td>
@@ -61,7 +62,7 @@
 
             <tr>
                 <td class="tableopentd02">${vs.count}</td>
-
+                <td class="tableopentd02">${job.companyname}</td>
                     <%--<td class="tableopentd02">${user.id}</td>--%>
                 <td class="tableopentd02">${job.jobname}</td>
                     <%--<td class="tableopentd02">${user.paystate==0?no_pay:have_pay}</td>--%>

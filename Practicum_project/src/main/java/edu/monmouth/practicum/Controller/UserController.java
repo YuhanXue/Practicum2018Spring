@@ -87,7 +87,10 @@ public class UserController {
         return "register";
     }
     @RequestMapping("Home")
-    public String HomeView(){
+    public String HomeView(HttpSession session){
+     User user  = (User) session.getAttribute("user");
+        List<Job> jobs = jobDao.findByJobareaLike("%"+user.getJobarea()+"%");
+        session.setAttribute("jobs",jobs);
         return "Home";
     }
     @RequestMapping("login")
@@ -135,11 +138,12 @@ public class UserController {
         return "modifyuserinfo";
     }
     @PostMapping("ModifyUserInfo.do")
-    public String ModifyUserInfo(@RequestParam("password") String password,@RequestParam("id_number") String id_number,@RequestParam("degree") String degree,HttpSession session,@RequestParam("file") MultipartFile file, HttpServletRequest request){
+    public String ModifyUserInfo(@RequestParam("password") String password,@RequestParam("id_number") String id_number,@RequestParam("degree") String degree,@RequestParam("jobarea") String jobarea,HttpSession session,@RequestParam("file") MultipartFile file, HttpServletRequest request){
         User user1 = (User) session.getAttribute("user");
         if(!id_number.equals("")&&!password.equals("")){
-            userDao.updateUser(password, Integer.parseInt(id_number),degree,user1.getId());
+            userDao.updateUser(password, Integer.parseInt(id_number),user1.getId());
         }
+        userDao.updatejobarea_and_degree(jobarea,degree,user1.getId());
         session.removeAttribute("user");
         User user2 = userDao.findById(user1.getId());
         session.setAttribute("user",user2);
@@ -173,7 +177,7 @@ public class UserController {
             return "redirect:Home";
 
         }else {
-            return "redirect:ModifyUserInfo";
+            return "redirect:Home";
         }
     }
 
@@ -181,7 +185,10 @@ public class UserController {
     public String myAccountView(){
         return "myAccount";
     }
-
+    @RequestMapping("HomeView")
+    public String HomeView(){
+        return "Home";
+    }
     @RequestMapping("logout.do")
     public String logout(HttpSession session){
         session.invalidate();

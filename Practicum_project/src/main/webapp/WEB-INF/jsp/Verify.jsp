@@ -13,22 +13,23 @@
 </head>
 <body>
    <%--Your email has been verify, <a href="login.do">click here to login page</a>--%>
-<div>your account has been verified successfully after &nbsp;&nbsp;&nbsp;<span id="time" style="color: red;">5&nbsp;&nbsp;&nbsp; jump to login page</span></div>
-<<script type="text/javascript">
-    $(function(){
-        setInterval(ChangeTime,1000);
-    });
-    function ChangeTime() {
-        var time=$('#time').text;
-        time = parseInt(time);
-        time--;
-        if(time<=0){
-            window.location.href="${pageContext.request.contextPath}/login"
-        }else {
-            $('time').text(time);
-        }
+   <div>your account has been verified successfully after&nbsp;&nbsp;&nbsp;<span id="time" style="color: red;">5</span>&nbsp;&nbsp;&nbsp;seconds will jump to login page</div>
+   <script type="text/javascript">
+       $(function () {
+           setInterval(ChangeTime,1000);
+       });
 
-    }
-</script>
+       function ChangeTime() {
+           var time;
+           time = $("#time").text();
+           time=parseInt(time);
+           time--;
+           if(time<=0){
+               window.location.href="${pageContext.request.contextPath}/login"
+           }else {
+               $('#time').text(time);
+           }
+       }
+   </script>
 </body>
 </html>

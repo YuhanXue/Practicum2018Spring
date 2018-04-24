@@ -22,8 +22,5 @@ public class JobController {
         session.setAttribute("job_list",jobs);
         return "job_list";
     }
-    @RequestMapping("/Homeview")
-    public String HomeView(){
-        return "Home";
-    }
+
 }

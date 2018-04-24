@@ -1,9 +1,10 @@
 body{
     margin:0;
     padding:0;
-    background-size: cover;
-    background: url(../images/SignUpbg.png);
+    width: 100%;
+    background: url(../images/SignUpbg.jpg) no-repeat;
     /*background-repeat: no-repeat;*/
+    background-size: 100% 100%;
     font-family:sans-serif;
 }
 .SignUpBox{

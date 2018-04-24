@@ -66,13 +66,13 @@
                                     <tr>
                                         <td style="text-align:right">change Password：</td>
                                         <td><input type="password" name="password"
-                                                   class="textinput" />
+                                                   class="textinput" value="${user.password}"/>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td style="text-align:right">change ID_Number：</td>
                                         <td><input type="text" name="id_number"
-                                                   class="textinput" />
+                                                   class="textinput" value="${user.id_number}"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -101,7 +101,7 @@
                                             <option value="Finance" ${user.jobarea=='Finance'?"selected='selected'":""}>Finance</option>
                                             <option value="Management" ${user.jobarea=='Management'?"selected='selected'":""}>Management</option>
                                             <option value="Education" ${user.jobarea=='Education'?"selected='selected'":""}>Education</option>
-                                            <option value="History" ${user.jobarea=='History'?"selected='selected'":""}>"History</option>
+                                            <option value="History" ${user.jobarea=='History'?"selected='selected'":""}>History</option>
                                             <option value="Music" ${user.jobarea=='Music'?"selected='selected'":""}>Music</option>
                                             <option value="Social Work" ${user.jobarea=='Social Work'?"selected='selected'":""}>Social Work</option>
                                             <option value="Psychology" ${user.jobarea=='Psychology'?"selected='selected'":""}>Psychology</option>

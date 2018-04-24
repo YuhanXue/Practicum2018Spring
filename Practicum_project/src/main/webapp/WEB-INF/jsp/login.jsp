@@ -20,7 +20,7 @@
             var list = document.getElementsByTagName("input");
             for(var i=0;i<list.length;i++){
                 if(list[i].value==""){
-                    alert("you should fill in the form");
+                    alert("you should fill out the form");
                     return false;
                 }
             }
@@ -49,7 +49,7 @@
             <input type="submit" value="Sign In"/>
         </div>
 
-        <a href="${pageContext.request.contextPath}/register">create a new account</a>
+        <a href="${pageContext.request.contextPath}/register">Create a new account</a> <br>
     </form>
 </div>
 

@@ -12,6 +12,10 @@ public interface UserDao extends JpaRepository<User,Integer>{
     User findById(int id);
     @Transactional
     @Modifying
-    @Query("update User set password=?1,id_number=?2,degree=?3 where id=?4")
-    void updateUser(String password,int id_number,String degree,int id);
+    @Query("update User set password=?1,id_number=?2 where id=?3")
+    void updateUser(String password,int id_number,int id);
+    @Transactional
+    @Modifying
+    @Query("update User set jobarea=?1,degree=?2 where id=?3")
+    void updatejobarea_and_degree(String jobarea,String degree,int id);
 }

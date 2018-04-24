@@ -12,10 +12,19 @@ public class Job {
     @GeneratedValue
     public int id;
     public String jobname;
+    public String companyname;
     public String requirement;
     public String location;
     public String contact;
     public String jobarea;
+
+    public String getCompanyname() {
+        return companyname;
+    }
+
+    public void setCompanyname(String companyname) {
+        this.companyname = companyname;
+    }
 
     public String getJobarea() {
         return jobarea;
