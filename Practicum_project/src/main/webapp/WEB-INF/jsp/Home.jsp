@@ -7,36 +7,36 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<html>
+<html lang="en">
 <head>
     <title>Home</title>
-    <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/Home.css"/>
 </head>
 <body>
-<div class="shortcut">
-    <div class="w">
-        <div class="scleft">
-            <ul class="main">
-                <li><a href="#" class="findjob">Find job</a></li>
-                <li><a href="${pageContext.request.contextPath}/Company">Company Review</a></li>
-                <li><a>Find Salaries</a></li>
-                <li><a>Find Resume</a></li>
-                <li><a>Post job</a></li>
-                <li class="messages" id="messages"><a>Welcome ${user.username}</a>
-
-                    <ul class="box" id="box">
+<nav class="nav-main">
+    <div class="logo">Find Your Job</div>
+        
+            <ul>
+                <li><a href="#" class="nav-item">Find job</a></li>
+                <li><a href="${pageContext.request.contextPath}/Company" class="nav-item">Company Review</a></li>
+                <li><a href="#" class="nav-item">Find Salaries</a></li>
+                <li><a href="#" class="nav-item">Find Resume</a></li>
+                <li><a href="#" class="nav-item">Post job</a></li>
+                <li class="messages" id="messages" style="float:right"><ahref="#" class="nav-item">Welcome ${user.username}</a>
+                  <div class="nav-content">
+                    <div class="nav-sub">
+                      <ul id="box">
                         <li><a href="${pageContext.request.contextPath}/myAccount">User center</a></li>
                         <li><a href="">company applied</a></li>
                         <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
-                    </ul>
-
+                      </ul>
+                     </div>   
+                  </div>
                 </li>
             </ul>
 
-        </div>
-
     </div>
-</div>
+ </nav>
 <div class="w search">
     <form action="${pageContext.request.contextPath }/joblist">
         <div class="job">
