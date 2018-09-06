@@ -27,7 +27,7 @@
                     <ul class="box" id="box">
                         <%--<li><a href="${pageContext.request.contextPath}/ModifyUserInfo">modify user information and resume</a></li>--%>
                         <li><a href="${pageContext.request.contextPath}/myAccount">User center</a></li>
-                        <li><a href="">company applied</a></li>
+                        <li><a href="${pageContext.request.contextPath}/show_jobapplied_list">job applied</a></li>
                         <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
                     </ul>
 

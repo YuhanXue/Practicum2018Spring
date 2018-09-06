@@ -34,7 +34,7 @@
                   <%--</div>--%>
                     <ul class="box" id="box">
                         <li><a class="nav-item1" href="${pageContext.request.contextPath}/myAccount">User center</a></li>
-                        <li><a class="nav-item1" href="">company applied</a></li>
+                        <li><a class="nav-item1" href="${pageContext.request.contextPath}/show_jobapplied_list">job applied</a></li>
                         <li><a class="nav-item1" href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
                     </ul>
                 </li>
