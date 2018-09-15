@@ -20,14 +20,14 @@
                 <li><a href="${pageContext.request.contextPath}/Home" class="findjob" style="display:block;float: left; font-size: 17px;line-height: 30px;">Find job</a></li>
                 <li><a href="${pageContext.request.contextPath}/Company" style="display:block;font-size: 17px;line-height: 30px;">Company Review</a></li>
                 <li><a style="display:block;font-size: 17px;line-height: 30px;">Find Salaries</a></li>
-                <li><a style="display:block;font-size: 17px;line-height: 30px;">Find Resume</a></li>
+                <li><a href="${pageContext.request.contextPath}/find_resume" style="display:block;font-size: 17px;line-height: 30px;">Find Resume</a></li>
                 <li><a style="display:block;font-size: 17px;line-height: 30px;">Post job</a></li>
                 <li class="messages" id="messages"><a style="font-size: 17px;line-height: 30px;">Welcome ${user.username}</a>
 
                     <ul class="box" id="box">
                         <%--<li><a href="${pageContext.request.contextPath}/ModifyUserInfo">modify user information and resume</a></li>--%>
                         <li><a href="${pageContext.request.contextPath}/myAccount">User center</a></li>
-                        <li><a href="${pageContext.request.contextPath}/show_jobapplied_list">job applied</a></li>
+                        <li><a href="${pageContext.request.contextPath}/show_jobapplied_list.do">job applied</a></li>
                         <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
                     </ul>
 

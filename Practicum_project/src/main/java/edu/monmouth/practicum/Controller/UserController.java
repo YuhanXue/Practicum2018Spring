@@ -3,8 +3,10 @@ package edu.monmouth.practicum.Controller;
 import Utils.ImageCode;
 import Utils.javaMail;
 import edu.monmouth.practicum.Dao.JobDao;
+import edu.monmouth.practicum.Dao.ResumeDao;
 import edu.monmouth.practicum.Dao.UserDao;
 import edu.monmouth.practicum.Domain.Job;
+import edu.monmouth.practicum.Domain.Resume;
 import edu.monmouth.practicum.Domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -39,6 +41,8 @@ public class UserController {
     UserDao userDao;
     @Autowired
     JobDao jobDao;
+    @Resource
+    ResumeDao resumeDao;
     @RequestMapping("register.do")
     public String Register(@Valid User user, HttpSession session, HttpServletRequest request) throws Exception {
 
@@ -149,6 +153,13 @@ public class UserController {
         session.setAttribute("user",user2);
         if(!file.isEmpty()){
             String saveFileName = file.getOriginalFilename();
+            if(saveFileName!=null){
+                String[] array = new String[2];
+                  array = saveFileName.split("\\.");
+            System.out.println(array[1]);
+            saveFileName = ((User) session.getAttribute("user")).getUsername()+"_Resume."+array[1];
+            }
+
             File saveFile = new File(request.getServletContext().getRealPath("/Resume/")+saveFileName);
             if(!saveFile.getParentFile().exists()){
                 saveFile.getParentFile().mkdir();
@@ -156,7 +167,11 @@ public class UserController {
             BufferedOutputStream bufferedOutputStream = null;
             try {
                 bufferedOutputStream = new BufferedOutputStream(new FileOutputStream(saveFile));
+                bufferedOutputStream.close();
+
             } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
                 e.printStackTrace();
             }
             try {
@@ -174,6 +189,10 @@ public class UserController {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+            Resume resume = new Resume();
+            resume.setUsername(((User) session.getAttribute("user")).getUsername());
+            resume.setFilename(saveFileName);
+            resumeDao.save(resume);
             return "redirect:Home";
 
         }else {
@@ -200,6 +219,10 @@ public class UserController {
         user.setVerified(1);
         userDao.save(user);
         return "Verify";
+    }
+    @RequestMapping("test")
+    public String test(){
+        return "test";
     }
     @RequestMapping("Company")
     public String companyview(){

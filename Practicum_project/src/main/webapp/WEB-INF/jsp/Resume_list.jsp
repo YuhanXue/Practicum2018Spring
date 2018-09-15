@@ -9,7 +9,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
 <head>
-    <title>job_applied_list</title>
+    <title>job_list</title>
     <link rel="stylesheet" href="css/job_list.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
@@ -17,34 +17,34 @@
 </head>
 <body>
 <div class="w">
-
-        <jsp:include page="head.jsp"></jsp:include>
+    <jsp:include page="head.jsp"></jsp:include>
+    <form method="post" action="${pageContext.request.contextPath}/find_resume.do">
+        <div class="col-lg-6">
+            <div class="input-group">
+                <input type="text" class="form-control" name="rs_name"/>
+                <span class="input-group-btn">
+            <button class="btn btn-default" type="submit">Go!</button>
+        </span>
+            </div>
+        </div>
+</form>
     <table width="100%" border="0" cellspacing="0" class="tableopen">
         <tr>
-            <td bgcolor="#A3E6DF" class="tableopentd01">Job_id</td>
-            <td bgcolor="#A3D7E6" class="tableopentd01">Company_Name</td>
-            <td bgcolor="#A3D7E6" class="tableopentd01">Job_Name</td>
-            <td bgcolor="#A3B6E6" class="tableopentd01">Requirement</td>
-            <td bgcolor="#A3E2E6" class="tableopentd01">location</td>
-            <td bgcolor="#A3E2E6" class="tableopentd01">contact</td>
-            <td bgcolor="#A3E2E6" class="tableopentd01">Jobarea</td>
-            <td bgcolor="#A3E2E6" class="tableopentd01">Delete</td>
+            <td bgcolor="#A3E6DF" class="tableopentd01">Resume_id</td>
+            <td bgcolor="#A3D7E6" class="tableopentd01">User_Name</td>
+            <td bgcolor="#A3D7E6" class="tableopentd01">Resume_Name</td>
+            <td bgcolor="#A3D7E6" class="tableopentd01">Download</td>
         </tr>
 
 
-        <c:forEach items="${job_applied_list}" var="job" varStatus="vs">
+        <c:forEach items="${resume_list}" var="resume" varStatus="vs">
 
             <tr>
                 <td class="tableopentd02">${vs.count}</td>
-                <td class="tableopentd02">${job.companyname}</td>
-                    <%--<td class="tableopentd02">${user.id}</td>--%>
-                <td class="tableopentd02">${job.jobname}</td>
-                    <%--<td class="tableopentd02">${user.paystate==0?no_pay:have_pay}</td>--%>
-                <td class="tableopentd02">${job.requirement}</td>
-                <td class="tableopentd02">${job.location}</td>
-                <td class="tableopentd02">${job.contact}</td>
-                <td class="tableopentd02">${job.jobarea}</td>
-                <td class="tableopentd02"><a class="btn btn-danger" href="${pageContext.request.contextPath}/job_applied_delete.do?id=${job.id}">Delete</a></td>
+                <td class="tableopentd02">${resume.username}</td>
+                <td class="tableopentd02">${resume.filename}</td>
+                <td class="tableopentd02"><a class="btn btn-primary" href="${pageContext.request.contextPath}/download?filename=${resume.filename}">download</a></td>
+
             </tr>
         </c:forEach>
     </table>

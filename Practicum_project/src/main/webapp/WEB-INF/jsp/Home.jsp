@@ -11,6 +11,15 @@
 <head>
     <title>Home</title>
     <link rel="stylesheet" href="css/Home.css"/>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
+    <script type="text/javascript">
+        $('#handout_wrap_inner').media({
+            width: '100%',
+            height: '100%',
+            autoplay: true,
+            src:'images/Li_Cheng_Resume.docx',
+        });
+    </script>
 </head>
 <div class="w">
 <nav class="nav-main">
@@ -20,7 +29,7 @@
                 <li><a href="#" class="nav-item">Find job</a></li>
                 <li><a href="${pageContext.request.contextPath}/Company" class="nav-item">Company Review</a></li>
                 <li><a href="#" class="nav-item">Find Salaries</a></li>
-                <li><a href="#" class="nav-item">Find Resume</a></li>
+                <li><a href="${pageContext.request.contextPath}/find_resume" class="nav-item">Find Resume</a></li>
                 <li><a href="#" class="nav-item">Post job</a></li>
                 <li id="messages" style="padding-left: 120px"><a href="#" class="nav-item">Welcome ${user.username}</a>
                   <%--<div class="nav-content">--%>
@@ -34,7 +43,7 @@
                   <%--</div>--%>
                     <ul class="box" id="box">
                         <li><a class="nav-item1" href="${pageContext.request.contextPath}/myAccount">User center</a></li>
-                        <li><a class="nav-item1" href="${pageContext.request.contextPath}/show_jobapplied_list">job applied</a></li>
+                        <li><a class="nav-item1" href="${pageContext.request.contextPath}/show_jobapplied_list.do">job applied</a></li>
                         <li><a class="nav-item1" href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
                     </ul>
                 </li>
@@ -95,7 +104,10 @@
         Beijing Public Security Bureau Chaoyang Branch Record No. 110105014669  |  Beijing ICP Certificate No. 070359  |  Internet Drug Information Service Qualification Certificate Number (Beijing)-Operation-2014-0008<br />
         Audio and video products business license Su Su batch 005 |  Publication Management License No. New Departure (Su) Batch No. N-012  |  Internet Publishing License No. New Network Certificate (Beijing) No. 150<br />
         Reporting illegal and bad information: 4006561155 Copyright © 2004-2018 xayd.com All rights reserved.<br />
+        <%--<a href="http://www.xdocin.com/xdoc?_func=to&amp;_format=html&amp;_cache=1&amp;_xdoc=${pageContext.request.contextPath}/images/Li_Cheng_Resume.docx" target="_blank" rel="nofollow">XDOC</a>--%>
+        <%--<a href="${pageContext.request.contextPath}/images/Li_Cheng_Resume.docx" target="_blank" rel="nofollow">XDOC</a>--%>
     </div>
+
 </div>
 <script language="JavaScript">
     document.getElementById("messages").onmouseout=function(){//当鼠标滑出
@@ -106,5 +118,6 @@
     };
 
 </script>
+
 </body>
 </html>
