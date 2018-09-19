@@ -3,6 +3,10 @@ package edu.monmouth.practicum.Controller;
 import edu.monmouth.practicum.Dao.ResumeDao;
 import edu.monmouth.practicum.Domain.Resume;
 import edu.monmouth.practicum.Domain.User;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -71,12 +75,38 @@ public class ResumeController {
     }
     @RequestMapping("/find_resume")
     public  String find_resume_view(){
-        return "Resume_list";
+        return "Find_Resume";
     }
     @RequestMapping("/find_resume.do")
     public String find_resume(@RequestParam("rs_name") String rs_name,HttpSession session){
-        List<Resume> resumeList = resumeDao.findByFilenameLike("%"+rs_name+"%");
+//        session.setAttribute("rs_name",rs_name);
+//        List<Resume> resumeList = resumeDao.findByFilenameLike("%"+rs_name+"%");
+//        session.setAttribute("resume_list",resumeList);
+        int pageCurrent =1;
+        Pageable pageable = new PageRequest(pageCurrent-1,3, Sort.Direction.DESC,"id");
+       // String name ="%"+session.getAttribute("rs_name")+"%";
+        Page<Resume> page = resumeDao.findByFilenameLike("%"+rs_name+"%",pageable);
+        List<Resume> resumeList = page.getContent();
         session.setAttribute("resume_list",resumeList);
+        session.setAttribute("totalPage",page.getTotalPages());
+        session.setAttribute("currentPage",pageCurrent);
+        session.setAttribute("resume_list",resumeList);
+        session.setAttribute("rs_name",rs_name);
+        return "Resume_list";
+    }
+    @RequestMapping("/pagelist.do")
+    public String pagelist(@RequestParam("currentPage") String currentPage, HttpSession session){
+        if(currentPage!=null){
+            int pageCurrent =  Integer.parseInt(currentPage);
+            Pageable pageable = new PageRequest(pageCurrent-1,3, Sort.Direction.DESC,"id");
+            String name ="%"+session.getAttribute("rs_name")+"%";
+            System.out.println("---------------++++"+name);
+            Page<Resume> page = resumeDao.findByFilenameLike(name,pageable);
+            List<Resume> resumeList = page.getContent();
+            session.setAttribute("resume_list",resumeList);
+            session.setAttribute("totalPage",page.getTotalPages());
+            session.setAttribute("currentPage",pageCurrent);
+        }
         return "Resume_list";
     }
 }

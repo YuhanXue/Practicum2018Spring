@@ -11,6 +11,8 @@
 <head>
     <title>head</title>
     <link rel="stylesheet" href="css/base.css"/>
+    <link rel="stylesheet" href="css/Home.css"/>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 </head>
 <body>
 <div class="shortcut">
@@ -38,6 +40,36 @@
 
     </div>
 </div>
+<%--<div class="w">--%>
+    <%--<nav class="nav-main">--%>
+        <%--<div class="logo">Find Your Job</div>--%>
+
+        <%--<ul>--%>
+            <%--<li><a href="#" class="nav-item">Find job</a></li>--%>
+            <%--<li><a href="${pageContext.request.contextPath}/Company" class="nav-item">Company Review</a></li>--%>
+            <%--<li><a href="#" class="nav-item">Find Salaries</a></li>--%>
+            <%--<li><a href="${pageContext.request.contextPath}/find_resume" class="nav-item">Find Resume</a></li>--%>
+            <%--<li><a href="#" class="nav-item">Post job</a></li>--%>
+            <%--<li id="messages" style="padding-left: 120px"><a href="#" class="nav-item">Welcome ${user.username}</a>--%>
+                <%--&lt;%&ndash;<div class="nav-content">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<div class="nav-sub">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<ul id="box">&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<li><a href="${pageContext.request.contextPath}/myAccount">User center</a></li>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<li><a href="">company applied</a></li>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;<li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;</ul>&ndash;%&gt;--%>
+                <%--&lt;%&ndash;</div>   &ndash;%&gt;--%>
+                <%--&lt;%&ndash;</div>&ndash;%&gt;--%>
+                <%--<ul class="box" id="box">--%>
+                    <%--<li><a class="nav-item1" href="${pageContext.request.contextPath}/myAccount">User center</a></li>--%>
+                    <%--<li><a class="nav-item1" href="${pageContext.request.contextPath}/show_jobapplied_list.do">job applied</a></li>--%>
+                    <%--<li><a class="nav-item1" href="${pageContext.request.contextPath}/logout.do">Logout</a></li>--%>
+                <%--</ul>--%>
+            <%--</li>--%>
+        <%--</ul>--%>
+
+    <%--</nav>--%>
+<%--</div>--%>
 <script language="JavaScript">
     document.getElementById("messages").onmouseout=function(){//当鼠标滑出
         document.getElementById("box").style.visibility="hidden";
