@@ -103,12 +103,19 @@ public class UserController {
     }
     @RequestMapping("login.do")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session){
+
         User user = userDao.findByUsernameAndPassword(username,password);
         if(user==null){
             session.setAttribute("user_msg","error username or password");
             return "login";
         }else {
+            if(user.getVerified()!=2){
+                session.setAttribute("rs_msg","you do not have right to use find resume function");
+            }else {
+                session.setAttribute("rs_msg","1");
+            }
             if(user.getVerified() == 0){
+
                 session.setAttribute("user_msg","you need verify your email address");
                 return "login";
             }else{

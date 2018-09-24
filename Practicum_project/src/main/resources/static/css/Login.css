@@ -79,3 +79,7 @@ h1{
 .loginBox a:hover{
     color: cornflowerblue;
 }
+.m1{
+    background-color: red;
+    background-image: url(../images/bgcrs.jpeg);
+}

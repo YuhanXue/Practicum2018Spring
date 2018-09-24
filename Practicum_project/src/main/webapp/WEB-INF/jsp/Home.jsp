@@ -19,17 +19,17 @@
             autoplay: true,
             src:'images/Li_Cheng_Resume.docx',
         });
+
     </script>
 </head>
 <div class="w">
 <nav class="nav-main">
     <div class="logo">Find Your Job</div>
-        
             <ul>
                 <li><a href="#" class="nav-item">Find job</a></li>
                 <li><a href="${pageContext.request.contextPath}/Company" class="nav-item">Company Review</a></li>
                 <li><a href="#" class="nav-item">Find Salaries</a></li>
-                <li><a href="${pageContext.request.contextPath}/find_resume" class="nav-item">Find Resume</a></li>
+                <li><a href="#" class="nav-item" id="find_resume" onclick="checkright()">Find Resume</a></li>
                 <li><a href="#" class="nav-item">Post job</a></li>
                 <li id="messages" style="padding-left: 120px"><a href="#" class="nav-item">Welcome ${user.username}</a>
                   <%--<div class="nav-content">--%>
@@ -109,6 +109,9 @@
     </div>
 
 </div>
+<%
+   String s = (String) session.getAttribute("rs_msg");
+%>
 <script language="JavaScript">
     document.getElementById("messages").onmouseout=function(){//当鼠标滑出
         document.getElementById("box").style.visibility="hidden";
@@ -116,7 +119,18 @@
     document.getElementById("messages").onmouseover=function(){ //当鼠标经过
         document.getElementById("box").style.visibility="visible";
     };
+    function checkright(){
+        var s = '<%=s%>';
+        if(s == "1"){
 
+            document.getElementById("find_resume").href ="${pageContext.request.contextPath}/find_resume";
+        }
+        else {
+            alert(s);
+
+        }
+
+    };
 </script>
 
 </body>
