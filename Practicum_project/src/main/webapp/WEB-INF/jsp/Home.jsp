@@ -30,7 +30,7 @@
                 <li><a href="${pageContext.request.contextPath}/Company" class="nav-item">Company Review</a></li>
                 <li><a href="#" class="nav-item">Find Salaries</a></li>
                 <li><a href="#" class="nav-item" id="find_resume" onclick="checkright()">Find Resume</a></li>
-                <li><a href="#" class="nav-item">Post job</a></li>
+                <li><a href="#" class="nav-item" id="post" onclick="checkpostright()">Post job</a></li>
                 <li id="messages" style="padding-left: 120px"><a href="#" class="nav-item">Welcome ${user.username}</a>
                   <%--<div class="nav-content">--%>
                     <%--<div class="nav-sub">--%>
@@ -112,6 +112,9 @@
 <%
    String s = (String) session.getAttribute("rs_msg");
 %>
+<%
+    String t = (String) session.getAttribute("p_msg");
+%>
 <script language="JavaScript">
     document.getElementById("messages").onmouseout=function(){//当鼠标滑出
         document.getElementById("box").style.visibility="hidden";
@@ -130,6 +133,17 @@
 
         }
 
+    };
+    function checkpostright() {
+        var s = '<%=t%>';
+        if(s == "1"){
+
+            document.getElementById("post").href ="${pageContext.request.contextPath}/job_post";
+        }
+        else {
+            alert(s);
+
+        }
     };
 </script>
 

@@ -111,8 +111,10 @@ public class UserController {
         }else {
             if(user.getVerified()!=2){
                 session.setAttribute("rs_msg","you do not have right to use find resume function");
+                session.setAttribute("p_msg","you do not have right to use post resume function");
             }else {
                 session.setAttribute("rs_msg","1");
+                session.setAttribute("p_msg","1");
             }
             if(user.getVerified() == 0){
 

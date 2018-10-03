@@ -22,8 +22,8 @@
                 <li><a href="${pageContext.request.contextPath}/Home" class="findjob" style="display:block;float: left; font-size: 17px;line-height: 30px;">Find job</a></li>
                 <li><a href="${pageContext.request.contextPath}/Company" style="display:block;font-size: 17px;line-height: 30px;">Company Review</a></li>
                 <li><a style="display:block;font-size: 17px;line-height: 30px;">Find Salaries</a></li>
-                <li><a href="${pageContext.request.contextPath}/find_resume" style="display:block;font-size: 17px;line-height: 30px;">Find Resume</a></li>
-                <li><a style="display:block;font-size: 17px;line-height: 30px;">Post job</a></li>
+                <li><a id="find_resume" onclick="checkright()" style="display:block;font-size: 17px;line-height: 30px;">Find Resume</a></li>
+                <li><a href="#" class="nav-item" id="post" onclick="checkpostright()">Post job</a></li>
                 <li class="messages" id="messages"><a style="font-size: 17px;line-height: 30px;">Welcome ${user.username}</a>
 
                     <ul class="box" id="box">
@@ -70,6 +70,12 @@
 
     <%--</nav>--%>
 <%--</div>--%>
+<%
+    String s = (String) session.getAttribute("rs_msg");
+%>
+<%
+    String t = (String) session.getAttribute("p_msg");
+%>
 <script language="JavaScript">
     document.getElementById("messages").onmouseout=function(){//当鼠标滑出
         document.getElementById("box").style.visibility="hidden";
@@ -77,7 +83,29 @@
     document.getElementById("messages").onmouseover=function(){ //当鼠标经过
         document.getElementById("box").style.visibility="visible";
     };
+    function checkright(){
+        var s = '<%=s%>';
+        if(s == "1"){
 
+            document.getElementById("find_resume").href ="${pageContext.request.contextPath}/find_resume";
+        }
+        else {
+            alert(s);
+
+        }
+
+    };
+    function checkpostright() {
+        var s = '<%=t%>';
+        if(s == "1"){
+
+            document.getElementById("post").href ="${pageContext.request.contextPath}/job_post";
+        }
+        else {
+            alert(s);
+
+        }
+    };
 </script>
     </body>
 </html>

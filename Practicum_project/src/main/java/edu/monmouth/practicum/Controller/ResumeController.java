@@ -78,6 +78,7 @@ public class ResumeController {
         User user = (User) session.getAttribute("user");
         if(user.getVerified()==2){
         return "Find_Resume";}
+
         else {
             session.setAttribute("rs_msg","you have right to use find resume function");
             return "Home";
@@ -90,7 +91,7 @@ public class ResumeController {
 //        List<Resume> resumeList = resumeDao.findByFilenameLike("%"+rs_name+"%");
 //        session.setAttribute("resume_list",resumeList);
         int pageCurrent =1;
-        Pageable pageable = new PageRequest(pageCurrent-1,5, Sort.Direction.DESC,"id");
+        Pageable pageable = new PageRequest(pageCurrent-1,3, Sort.Direction.DESC,"id");
        // String name ="%"+session.getAttribute("rs_name")+"%";
         Page<Resume> page = resumeDao.findByFilenameLike("%"+rs_name+"%",pageable);
         List<Resume> resumeList = page.getContent();
@@ -105,7 +106,7 @@ public class ResumeController {
     public String pagelist(@RequestParam("currentPage") String currentPage, HttpSession session){
         if(currentPage!=null){
             int pageCurrent =  Integer.parseInt(currentPage);
-            Pageable pageable = new PageRequest(pageCurrent-1,5, Sort.Direction.DESC,"id");
+            Pageable pageable = new PageRequest(pageCurrent-1,3, Sort.Direction.DESC,"id");
             String name ="%"+session.getAttribute("rs_name")+"%";
             System.out.println("---------------++++"+name);
             Page<Resume> page = resumeDao.findByFilenameLike(name,pageable);
