@@ -11,11 +11,13 @@
 <head>
     <title>job_list</title>
     <link rel="stylesheet" href="css/job_list.css"/>
+    <link rel="stylesheet" href="css/Home.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div>
 <div class="w">
     <%--<div class="shortcut">--%>
         <%--<div class="w">--%>
@@ -78,7 +80,7 @@
             </tr>
         </c:forEach>
     </table>
-
+</div>
     <div class="w againw">
         <div class="copyright">
             Beijing Public Security Bureau Chaoyang Branch Record No. 110105014669  |  Beijing ICP Certificate No. 070359  |  Internet Drug Information Service Qualification Certificate Number (Beijing)-Operation-2014-0008<br />

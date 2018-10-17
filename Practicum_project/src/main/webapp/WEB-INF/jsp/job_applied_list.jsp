@@ -11,14 +11,15 @@
 <head>
     <title>job_applied_list</title>
     <link rel="stylesheet" href="css/job_list.css"/>
+    <link rel="stylesheet" href="css/Home.css"/>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="w">
-
-        <jsp:include page="head.jsp"></jsp:include>
+<div>
+    <jsp:include page="head.jsp" flush="true"></jsp:include>
+    <div class="w">
     <table width="100%" border="0" cellspacing="0" class="tableopen">
         <tr>
             <td bgcolor="#A3E6DF" class="tableopentd01">Job_id</td>
@@ -55,6 +56,7 @@
             Audio and video products business license Su Su batch 005 |  Publication Management License No. New Departure (Su) Batch No. N-012  |  Internet Publishing License No. New Network Certificate (Beijing) No. 150<br />
             Reporting illegal and bad information: 4006561155 Copyright © 2004-2018 xayd.com All rights reserved.<br />
         </div>
+    </div>
     </div>
     <script language="JavaScript">
         document.getElementById("messages").onmouseout=function(){//当鼠标滑出

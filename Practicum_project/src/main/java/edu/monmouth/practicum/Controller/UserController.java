@@ -217,10 +217,14 @@ public class UserController {
     public String HomeView(){
         return "Home";
     }
+    @RequestMapping("logout")
+    public String logoutView(){
+        return "logoutSuccess";
+    }
     @RequestMapping("logout.do")
     public String logout(HttpSession session){
         session.invalidate();
-        return "logoutSuccess";
+        return "login";
     }
     @RequestMapping("/verify")
     public String verify(HttpSession session){

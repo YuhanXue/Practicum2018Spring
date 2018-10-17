@@ -10,36 +10,42 @@
 <html>
 <head>
     <title>head</title>
-    <link rel="stylesheet" href="css/base.css"/>
+
     <link rel="stylesheet" href="css/Home.css"/>
     <script src="http://libs.baidu.com/jquery/2.0.0/jquery.js"></script>
 </head>
 <body>
-<div class="shortcut">
-    <div class="w">
-        <div class="scleft">
-            <ul class="main">
-                <li><a href="${pageContext.request.contextPath}/Home" class="findjob" style="display:block;float: left; font-size: 17px;line-height: 30px;">Find job</a></li>
-                <li><a href="${pageContext.request.contextPath}/Company" style="display:block;font-size: 17px;line-height: 30px;">Company Review</a></li>
-                <li><a style="display:block;font-size: 17px;line-height: 30px;">Find Salaries</a></li>
-                <li><a id="find_resume" onclick="checkright()" style="display:block;font-size: 17px;line-height: 30px;">Find Resume</a></li>
-                <li><a href="#" class="nav-item" id="post" onclick="checkpostright()">Post job</a></li>
-                <li class="messages" id="messages"><a style="font-size: 17px;line-height: 30px;">Welcome ${user.username}</a>
+<div class="w">
+    <nav class="nav-main">
+        <div class="logo">Find Your Job</div>
+        <ul>
+            <li><a href="${pageContext.request.contextPath}/Home" class="nav-item">Find job</a></li>
+            <li><a href="${pageContext.request.contextPath}/Company" class="nav-item">Company Review</a></li>
+            <li><a href="#" class="nav-item">Find Salaries</a></li>
+            <li><a href="#" class="nav-item" id="find_resume" onclick="checkright()">Find Resume</a></li>
+            <li><a href="#" class="nav-item" id="post" onclick="checkpostright()">Post job</a></li>
+            <li id="messages" style="padding-left: 120px"><a href="${pageContext.request.contextPath}/myAccount" class="nav-item">Welcome ${user.username}</a>
+                <%--<div class="nav-content">--%>
+                <%--<div class="nav-sub">--%>
+                <%--<ul id="box">--%>
+                <%--<li><a href="${pageContext.request.contextPath}/myAccount">User center</a></li>--%>
+                <%--<li><a href="">company applied</a></li>--%>
+                <%--<li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>--%>
+                <%--</ul>--%>
+                <%--</div>   --%>
+                <%--</div>--%>
+                <%--<ul class="box" id="box">--%>
+                    <%--<li><a class="nav-item1" href="${pageContext.request.contextPath}/myAccount">User center</a></li>--%>
+                    <%--<li><a class="nav-item1" href="${pageContext.request.contextPath}/show_jobapplied_list.do">job applied</a></li>--%>
+                    <%--<li><a class="nav-item1" href="${pageContext.request.contextPath}/logout.do">Logout</a></li>--%>
+                <%--</ul>--%>
+            </li>
+        </ul>
 
-                    <ul class="box" id="box">
-                        <%--<li><a href="${pageContext.request.contextPath}/ModifyUserInfo">modify user information and resume</a></li>--%>
-                        <li><a href="${pageContext.request.contextPath}/myAccount">User center</a></li>
-                        <li><a href="${pageContext.request.contextPath}/show_jobapplied_list.do">job applied</a></li>
-                        <li><a href="${pageContext.request.contextPath}/logout.do">Logout</a></li>
-                    </ul>
-
-                </li>
-            </ul>
-
-        </div>
-
-    </div>
+    </nav>
 </div>
+
+
 <%--<div class="w">--%>
     <%--<nav class="nav-main">--%>
         <%--<div class="logo">Find Your Job</div>--%>

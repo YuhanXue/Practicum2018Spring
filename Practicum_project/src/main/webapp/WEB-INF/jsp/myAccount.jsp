@@ -26,7 +26,7 @@
 
 						<tr>
 							<td class="listtd"><img src="images/miniicon.gif" width="9"
-								height="6" />&nbsp;&nbsp;&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/findOrderByUserId.do">Company applied</a>
+								height="6" />&nbsp;&nbsp;&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/show_jobapplied_list.do">Job applied</a>
 							</td>
 						</tr>
 						<tr>
