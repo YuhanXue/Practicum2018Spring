@@ -12,24 +12,6 @@
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 </head>
 <body>
-<%--<div>You have logout successfully,after&nbsp;&nbsp;&nbsp;<span id="time" style="color: red;">5</span>&nbsp;&nbsp;&nbsp;seconds will jump to login page</div>--%>
-<%--<script type="text/javascript">--%>
-<%--$(function () {--%>
-    <%--setInterval(ChangeTime,1000);--%>
-<%--});--%>
-
-    <%--function ChangeTime() {--%>
-        <%--var time;--%>
-        <%--time = $("#time").text();--%>
-        <%--time=parseInt(time);--%>
-        <%--time--;--%>
-        <%--if(time<=0){--%>
-            <%--window.location.href="${pageContext.request.contextPath}/login"--%>
-        <%--}else {--%>
-            <%--$('#time').text(time);--%>
-        <%--}--%>
-    <%--}--%>
-<%--</script>--%>
 <!------------------  重启操作 准备弹窗 --------------->
 <div id="reboot_pre" style="width: 450px; height: 200px; margin-left:auto; margin-right:auto; margin-top:200px; visibility:hidden; background: #F0F0F0; border:1px solid #00DB00; z-index:9999">
     <div style="width: 450px; height: 30px; background:#00DB00; line-height:30px;text-align: center;"><b>Preparing</b></div>
