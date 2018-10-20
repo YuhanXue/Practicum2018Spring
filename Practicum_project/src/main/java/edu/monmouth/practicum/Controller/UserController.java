@@ -121,8 +121,7 @@ public class UserController {
                 session.setAttribute("user_msg","you need verify your email address");
                 return "login";
             }else{
-//            user.setVerified(1);
-//            userDao.save(user);
+
                 session.setAttribute("user",user);
                 List<Job> jobs = jobDao.findByJobareaLike("%"+user.getJobarea()+"%");
                 session.setAttribute("jobs",jobs);

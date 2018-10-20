@@ -5,7 +5,6 @@
 <head>
     <title>practicum</title>
     <link rel="stylesheet" href="css/SignUp.css"/>
-    <%--<script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>--%>
     <script type="text/javascript">
 
         function check(){
@@ -24,20 +23,7 @@
 </head>
 
 <body>
-<%--<form action="${pageContext.request.contextPath}/register.do">--%>
-<%--<font color="#ff0000">${email_msg}</font><br />--%>
-<%--Username:<input type="text" name="username"><br/>--%>
-<%--Password:<input type="text" name="password"><br/>--%>
-<%--ID_Number:<input type="text" name="id_number"/><br/>--%>
-<%--Degree:<select name="degree">--%>
-<%--<option value="Bachelor">Bachelor</option>--%>
-<%--<option value="Master">Master</option>--%>
-<%--<option value="Phd">Phd</option>--%>
-<%--</select><br/>--%>
-<%--College:<input type="text" name="college"><br/>--%>
-<%--Email:<input type="text" name="email"><br/>--%>
-<%--<input type="submit"/>--%>
-<%--</form>--%>
+
 <div class="SignUpBox">
     <h1> Sign Up</h1>
 

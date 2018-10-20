@@ -57,24 +57,7 @@ public class JobController {
         session.setAttribute("job_applied_list",job_applied_list);
         return "job_applied_list";
     }
-    @RequestMapping("/job_post")
-    public String post(HttpSession session){
-        User user = (User) session.getAttribute("user");
-        if(user.getVerified()==2){
-            return "Post_job";
-
-        }
-
-        else {
-            //session.setAttribute("p_msg","you have right to use post job function");
-            return "Home";
-        }
-    }
-    @RequestMapping("/post.do")
-    public String postjob(Job job){
-        jobDao.save(job);
-        return "Home";
-    }
+    
     @RequestMapping("/job_applied_list")
     public String job_applied_list(){
         return "job_applied_list";
