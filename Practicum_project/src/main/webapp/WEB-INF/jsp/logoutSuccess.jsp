@@ -20,6 +20,20 @@
     <br />
     <div><button type="button" style="width:70px; height:20px; margin-left:340px" onclick="reboot_cancel()">cancel</button></div>
 </div>
+<!------------------  重启操作 准备弹窗 --------------->
+
+<!------------------  重启操作 进行弹窗 --------------->
+<div id="reboot_ing" style="width: 450px; height: 150px;  margin-left:auto; margin-right:auto; margin-top:-150px; visibility: hidden; background: #F0F0F0; border:1px solid #00DB00">
+    <div style="width: 450px; height: 30px; background:#00DB00; line-height:30px;text-align: center;"><b>Processing</b></div>
+    <br />
+    <div><p style="margin-left:40px">Try to restart system...   please wait <span id="reboot_ing_time">17</span>second</p></div>
+    <br />
+    <div  id="progress_reboot" style="margin-left:40px;color:#00DB00;font-family:Arial;font-weight:bold;height:18px">|</div>
+    <br />
+</div>
+<!------------------  重启操作 进行弹窗 --------------->
+
+
 
 </body>
 </html>
