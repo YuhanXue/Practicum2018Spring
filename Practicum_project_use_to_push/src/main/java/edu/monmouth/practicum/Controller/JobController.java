@@ -48,4 +48,19 @@ public class JobController {
         session.setAttribute("job_applied_list",job_applied_list);
         return "job_applied_list";
     }
+    @RequestMapping("/show_jobapplied_list.do")
+    public String show_jobapplied_list(HttpSession session){
+        List<Job> job_applied_list = new ArrayList<Job>();
+        User user = (User)session.getAttribute("user");
+        int user_id = user.getId();
+        List<Jobapplied> jobappliedList = jobappliedDao.findByUserid(user_id);
+        // List<Jobapplied> jobappliedList = jobappliedDao.findByUserid(user_id);
+        for(Jobapplied j:jobappliedList){
+            int j_id = j.getJobid();
+            Job job = jobDao.findById(j_id);
+            job_applied_list.add(job);
+        }
+        session.setAttribute("job_applied_list",job_applied_list);
+        return "job_applied_list";
+    }
 }
