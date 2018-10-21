@@ -5,11 +5,10 @@
 <head>
     <title>modfiyuserinfo</title>
     <link rel="stylesheet" href="css/main.css" type="text/css" />
-    <link rel="stylesheet" href="css/Home.css" type="text/css"/>
 </head>
-<jsp:include page="head.jsp"></jsp:include>
-<body class="main">
 
+<body class="main">
+<jsp:include page="head.jsp"></jsp:include>
 <div id="divpagecontent">
     <table width="100%" border="0" cellspacing="0">
         <tr>

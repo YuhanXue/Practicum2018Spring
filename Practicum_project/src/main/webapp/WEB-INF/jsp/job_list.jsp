@@ -11,13 +11,8 @@
 <head>
     <title>job_list</title>
     <link rel="stylesheet" href="css/job_list.css"/>
-    <link rel="stylesheet" href="css/Home.css"/>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div>
 <div class="w">
     <%--<div class="shortcut">--%>
         <%--<div class="w">--%>
@@ -60,7 +55,6 @@
             <td bgcolor="#A3E2E6" class="tableopentd01">location</td>
             <td bgcolor="#A3E2E6" class="tableopentd01">contact</td>
             <td bgcolor="#A3E2E6" class="tableopentd01">Jobarea</td>
-            <td bgcolor="#A3E2E6" class="tableopentd01">quickly_apply</td>
         </tr>
 
 
@@ -76,18 +70,15 @@
                 <td class="tableopentd02">${job.location}</td>
                 <td class="tableopentd02">${job.contact}</td>
                 <td class="tableopentd02">${job.jobarea}</td>
-                <td class="tableopentd02"><a class="btn btn-primary" href="${pageContext.request.contextPath}/job_applied.do?id=${job.id}">Apply</a></td>
             </tr>
         </c:forEach>
     </table>
-</div>
+
     <div class="w againw">
         <div class="copyright">
-            Beijing Public Security Bureau Chaoyang Branch Record No. 110105014669  |  Beijing ICP Certificate No. 070359  |  Internet Drug Information Service Qualification Certificate Number (Beijing)-Operation-2014-0008<br />
-            Audio and video products business license Su Su batch 005 |  Publication Management License No. New Departure (Su) Batch No. N-012  |  Internet Publishing License No. New Network Certificate (Beijing) No. 150<br />
-            Reporting illegal and bad information: 4006561155 Copyright © 2004-2018 xayd.com All rights reserved.<br />
-
-
+            北京市公安局朝阳分局备案编号110105014669  |  京ICP证070359号  |  互联网药品信息服务资格证编号(京)-经营性-2014-0008  |  新出发京零 字第大120007号<br />
+            音像制品经营许可证苏宿批005号  |  出版物经营许可证编号新出发(苏)批字第N-012号  |  互联网出版许可证编号新出网证(京)字150号<br />
+            违法和不良信息举报电话：4006561155  Copyright © 2004-2018  xxxx.com 版权所有<br />
         </div>
     </div>
     <script language="JavaScript">
