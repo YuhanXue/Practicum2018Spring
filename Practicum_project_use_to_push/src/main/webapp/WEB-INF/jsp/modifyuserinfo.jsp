@@ -24,11 +24,9 @@
                                 href="${pageContext.request.contextPath}/ModifyUserInfo">modfiy user information</a></td>
                     </tr>
 
-                    <tr>
-                        <td class="listtd"><img src="images/miniicon.gif" width="9"
-                                                height="6" />&nbsp;&nbsp;&nbsp;&nbsp; <a href="orderlist.jsp">Applied Companies</a>
-                        </td>
-                    </tr>
+                    <td class="listtd"><img src="images/miniicon.gif" width="9"
+                                            height="6" />&nbsp;&nbsp;&nbsp;&nbsp; <a href="${pageContext.request.contextPath}/show_jobapplied_list.do">Job applied</a>
+                    </td>
 
                     <tr>
                         <td class="listtd"><img src="images/miniicon.gif" width="9"
