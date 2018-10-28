@@ -32,5 +32,20 @@
     <br />
 </div>
 <!------------------  重启操作 进行弹窗 --------------->
+<script type="text/javascript">
+
+    var cancel_flag = 0;
+    var already = 0;
+
+    /* 网页一加载就执行的操作 */
+    window.onload = reboot();
+
+    /* 重启按钮的单击操作 */
+    function reboot(){
+
+    }
+    /* 重启准备弹窗计时 5秒 */
+
+</script>
 </body>
 </html>
