@@ -59,6 +59,20 @@
             }
         }
     }
+    /* 重启进行中弹窗计时 15秒 */
+    function delayDo_reboot(str){
+        display_reboot(100);
+        var delay = document.getElementById(str).innerHTML;
+        if(delay > 0) {
+            delay--;
+            document.getElementById(str).innerHTML = delay;
+            setTimeout("delayDo_reboot('reboot_ing_time')", 1000);
+        } else {
+            hideDiv("reboot_ing");
+            alert("successful！");
+            window.location.href="${pageContext.request.contextPath}/logout.do";
+        }
+    }
 </script>
 </body>
 </html>
