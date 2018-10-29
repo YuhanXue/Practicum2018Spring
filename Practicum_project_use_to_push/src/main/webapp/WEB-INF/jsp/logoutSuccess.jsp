@@ -42,7 +42,18 @@
 
     /* 重启按钮的单击操作 */
     function reboot(){
-
+        if(confirm("It will let you logout the system, are you sure ?")){
+            document.getElementById("reboot_pre_time").innerHTML = 4;
+            document.getElementById("reboot_ing_time").innerHTML = 7;
+            document.all.progress_reboot.innerHTML = "|";
+            download_flag = 0;
+            cancel_flag = 0;
+            already = 0;
+            setTimeout("showDiv('reboot_pre')",500);
+            delayPre_reboot("reboot_pre_time");
+        }else {
+            window.location.href="${pageContext.request.contextPath}/Home";
+        }
     }
     /* 重启准备弹窗计时 5秒 */
     function delayPre_reboot(str) {
@@ -61,18 +72,9 @@
     }
     /* 重启进行中弹窗计时 15秒 */
     function delayDo_reboot(str){
-        display_reboot(100);
-        var delay = document.getElementById(str).innerHTML;
-        if(delay > 0) {
-            delay--;
-            document.getElementById(str).innerHTML = delay;
-            setTimeout("delayDo_reboot('reboot_ing_time')", 1000);
-        } else {
-            hideDiv("reboot_ing");
-            alert("successful！");
-            window.location.href="${pageContext.request.contextPath}/logout.do";
-        }
+      
     }
+
 </script>
 </body>
 </html>
