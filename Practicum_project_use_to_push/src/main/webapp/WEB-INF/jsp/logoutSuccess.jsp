@@ -45,7 +45,20 @@
 
     }
     /* 重启准备弹窗计时 5秒 */
-
+    function delayPre_reboot(str) {
+        if(!cancel_flag){
+            var delay = document.getElementById(str).innerHTML;
+            if(delay > 0) {
+                delay--;
+                document.getElementById(str).innerHTML = delay;
+                setTimeout("delayPre_reboot('reboot_pre_time')", 1000);
+            } else {
+                hideDiv("reboot_pre");
+                setTimeout("showDiv('reboot_ing')",500);
+                delayDo_reboot("reboot_ing_time");
+            }
+        }
+    }
 </script>
 </body>
 </html>
