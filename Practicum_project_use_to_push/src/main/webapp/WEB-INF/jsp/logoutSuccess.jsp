@@ -12,11 +12,29 @@
     <script type="text/javascript" src="js/jquery-3.3.1.js"></script>
 </head>
 <body>
+<%--<div>You have logout successfully,after&nbsp;&nbsp;&nbsp;<span id="time" style="color: red;">5</span>&nbsp;&nbsp;&nbsp;seconds will jump to login page</div>--%>
+<%--<script type="text/javascript">--%>
+<%--$(function () {--%>
+<%--setInterval(ChangeTime,1000);--%>
+<%--});--%>
+
+<%--function ChangeTime() {--%>
+<%--var time;--%>
+<%--time = $("#time").text();--%>
+<%--time=parseInt(time);--%>
+<%--time--;--%>
+<%--if(time<=0){--%>
+<%--window.location.href="${pageContext.request.contextPath}/login"--%>
+<%--}else {--%>
+<%--$('#time').text(time);--%>
+<%--}--%>
+<%--}--%>
+<%--</script>--%>
 <!------------------  重启操作 准备弹窗 --------------->
 <div id="reboot_pre" style="width: 450px; height: 200px; margin-left:auto; margin-right:auto; margin-top:200px; visibility:hidden; background: #F0F0F0; border:1px solid #00DB00; z-index:9999">
     <div style="width: 450px; height: 30px; background:#00DB00; line-height:30px;text-align: center;"><b>Preparing</b></div>
     <br /><br />
-    <div><p style="margin-left:50px">We try to let you logout system please wait..<span id="reboot_pre_time">4</span> seconds</p></div>
+    <div><p style="margin-left:50px">We try to let you logout system please wait..<span id="reboot_pre_time">1</span> seconds</p></div>
     <br />
     <div><button type="button" style="width:70px; height:20px; margin-left:340px" onclick="reboot_cancel()">cancel</button></div>
 </div>
@@ -26,12 +44,14 @@
 <div id="reboot_ing" style="width: 450px; height: 150px;  margin-left:auto; margin-right:auto; margin-top:-150px; visibility: hidden; background: #F0F0F0; border:1px solid #00DB00">
     <div style="width: 450px; height: 30px; background:#00DB00; line-height:30px;text-align: center;"><b>Processing</b></div>
     <br />
-    <div><p style="margin-left:40px">Try to restart system...   please wait <span id="reboot_ing_time">17</span>second</p></div>
+    <div><p style="margin-left:40px">Try to restart system...   please wait <span id="reboot_ing_time">2</span>second</p></div>
     <br />
     <div  id="progress_reboot" style="margin-left:40px;color:#00DB00;font-family:Arial;font-weight:bold;height:18px">|</div>
     <br />
 </div>
 <!------------------  重启操作 进行弹窗 --------------->
+
+
 <script type="text/javascript">
 
     var cancel_flag = 0;
@@ -43,8 +63,8 @@
     /* 重启按钮的单击操作 */
     function reboot(){
         if(confirm("It will let you logout the system, are you sure ?")){
-            document.getElementById("reboot_pre_time").innerHTML = 4;
-            document.getElementById("reboot_ing_time").innerHTML = 7;
+            document.getElementById("reboot_pre_time").innerHTML = 1;
+            document.getElementById("reboot_ing_time").innerHTML = 2;
             document.all.progress_reboot.innerHTML = "|";
             download_flag = 0;
             cancel_flag = 0;
@@ -83,7 +103,8 @@
             alert("successful！");
             window.location.href="${pageContext.request.contextPath}/logout.do";
         }
-    }
+    }x
+    /* 重启准备时 取消按钮的事件*/
     function reboot_cancel(){
         cancel_flag = 1;
         hideDiv("reboot_pre");
@@ -99,6 +120,7 @@
     function hideDiv (str){
         document.getElementById(str).style.visibility = "hidden";
     }
+
     /* 重启进行中弹窗计时，缓冲条的移动*/
     function display_reboot(max){
         already++;
