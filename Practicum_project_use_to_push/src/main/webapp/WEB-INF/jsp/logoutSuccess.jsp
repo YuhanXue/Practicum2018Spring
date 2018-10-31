@@ -84,6 +84,21 @@
             window.location.href="${pageContext.request.contextPath}/logout.do";
         }
     }
+    function reboot_cancel(){
+        cancel_flag = 1;
+        hideDiv("reboot_pre");
+
+        alert("you already cancel logout the system");
+        window.location.href="${pageContext.request.contextPath}/Home";
+    }
+    /* 显示弹窗 */
+    function showDiv (str){
+        document.getElementById(str).style.visibility = "visible";
+    }
+    /* 隐藏弹窗 */
+    function hideDiv (str){
+        document.getElementById(str).style.visibility = "hidden";
+    }
 
 </script>
 </body>
