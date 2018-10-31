@@ -99,6 +99,17 @@
     function hideDiv (str){
         document.getElementById(str).style.visibility = "hidden";
     }
+    /* 重启进行中弹窗计时，缓冲条的移动*/
+    function display_reboot(max){
+        already++;
+        var dispObj = document.all.progress_reboot;
+        dispObj.style.width = 100.0*already/max+"px";
+        document.all.progress_reboot.innerHTML += "||||||||||||||||||||||||||||||||||";
+        // var timer = window.setTimeout("display("+max+")",1000);
+        // if (already >= max){
+        //     window.clearTimeout(timer);
+        // }
+    }
 
 </script>
 </body>
