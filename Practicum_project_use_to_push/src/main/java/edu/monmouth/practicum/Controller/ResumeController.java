@@ -102,4 +102,9 @@ public class ResumeController {
         session.setAttribute("rs_name",rs_name);
         return "Resume_list";
     }
+    @RequestMapping("/pagelist.do")
+    public String pagelist(@RequestParam("currentPage") String currentPage, HttpSession session){
+       
+        return "Resume_list";
+    }
 }
