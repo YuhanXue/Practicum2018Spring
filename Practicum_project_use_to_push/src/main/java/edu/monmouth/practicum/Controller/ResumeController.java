@@ -73,5 +73,16 @@ public class ResumeController {
         }
         return "Download_Successful";
     }
+    @RequestMapping("/find_resume")
+    public  String find_resume_view(HttpSession session){
+        User user = (User) session.getAttribute("user");
+        if(user.getVerified()==2){
+            return "Find_Resume";}
 
+        else {
+            session.setAttribute("rs_msg","you have right to use find resume function");
+            return "Home";
+        }
+
+    }
 }
