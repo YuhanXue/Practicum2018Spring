@@ -104,7 +104,17 @@ public class ResumeController {
     }
     @RequestMapping("/pagelist.do")
     public String pagelist(@RequestParam("currentPage") String currentPage, HttpSession session){
-       
+        if(currentPage!=null){
+            int pageCurrent =  Integer.parseInt(currentPage);
+            Pageable pageable = new PageRequest(pageCurrent-1,3, Sort.Direction.DESC,"id");
+            String name ="%"+session.getAttribute("rs_name")+"%";
+            System.out.println("---------------++++"+name);
+            Page<Resume> page = resumeDao.findByFilenameLike(name,pageable);
+            List<Resume> resumeList = page.getContent();
+            session.setAttribute("resume_list",resumeList);
+            session.setAttribute("totalPage",page.getTotalPages());
+            session.setAttribute("currentPage",pageCurrent);
+        }
         return "Resume_list";
     }
 }
