@@ -85,4 +85,21 @@ public class ResumeController {
         }
 
     }
+    @RequestMapping("/find_resume.do")
+    public String find_resume(@RequestParam("rs_name") String rs_name,HttpSession session){
+//        session.setAttribute("rs_name",rs_name);
+//        List<Resume> resumeList = resumeDao.findByFilenameLike("%"+rs_name+"%");
+//        session.setAttribute("resume_list",resumeList);
+        int pageCurrent =1;
+        Pageable pageable = new PageRequest(pageCurrent-1,3, Sort.Direction.DESC,"id");
+        // String name ="%"+session.getAttribute("rs_name")+"%";
+        Page<Resume> page = resumeDao.findByFilenameLike("%"+rs_name+"%",pageable);
+        List<Resume> resumeList = page.getContent();
+        session.setAttribute("resume_list",resumeList);
+        session.setAttribute("totalPage",page.getTotalPages());
+        session.setAttribute("currentPage",pageCurrent);
+        session.setAttribute("resume_list",resumeList);
+        session.setAttribute("rs_name",rs_name);
+        return "Resume_list";
+    }
 }
