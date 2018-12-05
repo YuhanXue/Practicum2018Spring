@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ page import="edu.monmouth.practicum.Domain.User" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -7,7 +8,19 @@
     <link rel="stylesheet" href="css/main.css" type="text/css" />
     <link rel="stylesheet" href="css/Home.css" type="text/css"/>
 </head>
+<% User user = (User) session.getAttribute("user");
+    if(user.getVerified()!=2){
+%>
+<jsp:include page="head_normal.jsp"></jsp:include>
+<%
+}
+else {
+%>
+
 <jsp:include page="head.jsp"></jsp:include>
+<%
+    }
+%>
 <body class="main">
 
 <div id="divpagecontent">
@@ -49,7 +62,7 @@
                 <table cellspacing="0" class="infocontent">
                     <tr>
                         <td>
-                            <form action="${pageContext.request.contextPath}/ModifyUserInfo.do" method="post" enctype="multipart/form-data">
+                            <form action="${pageContext.request.contextPath}/ModifyUserInfo.do" method="post" enctype="multipart/form-data" onsubmit="return check()">
                                 <input type="hidden" name="id" value="${u.id}">
                                 <table width="100%" border="0" cellspacing="2" class="upline">
                                     <tr>
@@ -136,5 +149,15 @@
     </table>
 </div>
 <jsp:include page="foot.jsp"></jsp:include>
+
+<script type="text/javascript">
+
+    function check(){
+
+
+        alert("Sucessfully modification");
+        return true;
+    }
+</script>
 </body>
 </html>

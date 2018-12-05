@@ -68,14 +68,14 @@ public class UserController {
         }else {
 
             if(m.matches()){
-                user.setVerified(0);
+                user.setVerified(1);
                 userDao.save(user);
                 session.setAttribute("user",user);
 //                javaMail javaMail = new javaMail();
 //                javaMail.sendmail(user.getEmail());
                 session.removeAttribute("simpleCaptcha");
                 session.setAttribute("user",user);
-                return "login";
+                return "registerSuccess";
             }
             else{
                 session.setAttribute("email_msg","error email try it again");
@@ -102,7 +102,7 @@ public class UserController {
     }
     @RequestMapping("login.do")
     public String login(@RequestParam("username") String username, @RequestParam("password") String password, HttpSession session){
-
+        System.out.println(username+"-----------");
         User user = userDao.findByUsernameAndPassword(username,password);
         if(user==null){
             session.setAttribute("user_msg","error username or password");
