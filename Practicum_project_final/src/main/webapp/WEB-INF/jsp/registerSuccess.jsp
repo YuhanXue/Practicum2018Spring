@@ -62,7 +62,7 @@
     /* 重启按钮的单击操作 */
     function reboot(){
         if(confirm("registersuccessful and we will let you login to our website")){
-            
+
             window.location.href="${pageContext.request.contextPath}/login";
         }
     }
